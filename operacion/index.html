@@ -119,7 +119,263 @@
 </div>
 
 <main id="main">
-<section class="phead dark"><div class="wrap wrap--w phead__in"><h1>operacion</h1></div></section>
+<section class="phead dark">
+  <div class="phead__glow" aria-hidden="true"></div>
+  <div class="wrap wrap--w phead__in">
+    <nav class="crumb" aria-label="Ruta">
+      <a href="../" data-es="Inicio" data-en="Home">Inicio</a><i>/</i>
+      <span aria-current="page" data-es="Operación" data-en="Operations">Operación</span>
+    </nav>
+    <h1 data-es="Anatomía de un cruce" data-en="Anatomy of a crossing">Anatomía de un cruce</h1>
+    <p class="lede" data-es="Publicamos la operación completa en lugar de resumirla. Siete pasos, el documento que gobierna cada uno, quién responde y qué se rompe cuando algo falla. Si vas a confiarnos tu carga, mereces ver el mecanismo."
+       data-en="We publish the whole operation instead of summarizing it. Seven steps, the document that governs each one, who is accountable and what breaks when something fails. If you are going to trust us with your freight, you deserve to see the mechanism.">
+      Publicamos la operación completa en lugar de resumirla. Siete pasos, el documento que gobierna cada uno, quién responde y qué se rompe cuando algo falla. Si vas a confiarnos tu carga, mereces ver el mecanismo.</p>
+  </div>
+</section>
+
+<!-- 01 — master diagram -->
+<section class="sec">
+  <div class="wrap wrap--w">
+    <header class="rec reveal">
+      <span class="rec__n">01 / <span data-es="VISTA GENERAL" data-en="OVERVIEW">VISTA GENERAL</span></span>
+      <div class="rec__b">
+        <h2 data-es="Los siete pasos, en una sola línea" data-en="The seven steps, on one line">Los siete pasos, en una sola línea</h2>
+        <p class="lede" data-es="Arriba, el documento que gobierna cada etapa. Abajo, el tiempo transcurrido típico. En medio, la carga."
+           data-en="Above, the document that governs each stage. Below, typical elapsed time. In the middle, the freight.">
+          Arriba, el documento que gobierna cada etapa. Abajo, el tiempo transcurrido típico. En medio, la carga.</p>
+      </div>
+    </header>
+    <figure class="plate reveal" style="--ar:21/9" data-prompt="A wide master process diagram spanning the full frame, left to right, in three horizontal registers. Middle register: seven square outlined stage nodes connected by thin arrows, numbered 01 to 07 and labeled &#x27;PICKUP&#x27;, &#x27;CONSOLIDATION&#x27;, &#x27;DOCUMENTATION&#x27;, &#x27;BORDER CROSSING&#x27;, &#x27;WAREHOUSE RECEIPT&#x27;, &#x27;FULFILLMENT&#x27;, &#x27;LAST MILE&#x27;. Node 04 straddles a bright cyan vertical dashed line running the full height of the frame, labeled &#x27;BORDER&#x27; vertically. Upper register: for each stage a small document glyph with a short uppercase label — &#x27;PICKUP ORDER&#x27;, &#x27;PACKING LIST&#x27;, &#x27;PEDIMENTO&#x27;, &#x27;CUSTOMS RELEASE&#x27;, &#x27;RECEIPT&#x27;, &#x27;PICK LIST&#x27;, &#x27;POD&#x27;. Lower register: a thin timeline axis with tick marks and small elapsed-time labels &#x27;H+0&#x27;, &#x27;H+4&#x27;, &#x27;H+8&#x27;, &#x27;H+12&#x27;, &#x27;H+24&#x27;, &#x27;H+36&#x27;, &#x27;H+48&#x27;. Strict brand palette only: navy #0A357F, corporate blue #0F62B4, cyan #1CA0E0, pale sky #BBDFF5, near-black navy #050C1A, paper white #F5F8FC. No other hues. Flat vector, no gradients except a single subtle cyan glow, no drop shadows, no 3D bevels, no stock-photo collage, no clip art. Thin 1.5px strokes, geometric precision, generous negative space, square corners. Any text must be short, in uppercase sans-serif, and spelled exactly as given.">
+  <div class="plate__box">
+    <img src="../assets/img/generated/ops-flow.png" decoding="async" alt="Anatomía de un cruce"
+         data-es-alt="Anatomía de un cruce" data-en-alt="Anatomy of a crossing">
+    <div class="plate__ph">
+      <span class="plate__id">IMG · ops-flow.png · 21:9</span>
+      <div>
+        <p class="plate__brief">
+          <b data-es="Anatomía de un cruce" data-en="Anatomy of a crossing">Anatomía de un cruce</b>
+          <span data-es="Diagrama maestro de los siete pasos de un cruce, con el documento que gobierna cada uno." data-en="Master diagram of the seven crossing steps, with the document that governs each.">Diagrama maestro de los siete pasos de un cruce, con el documento que gobierna cada uno.</span>
+        </p>
+        <button type="button" class="plate__act" data-es="Copiar prompt" data-en="Copy prompt">Copiar prompt</button>
+      </div>
+    </div>
+  </div>
+  <figcaption class="plate__cap">
+    <b>FIG. 01</b>
+    <span data-es="Siete pasos, siete controles: la operación completa en una línea." data-en="Seven steps, seven controls: the whole operation on one line.">Siete pasos, siete controles: la operación completa en una línea.</span>
+  </figcaption>
+</figure>
+  </div>
+</section>
+
+<!-- 02 — interactive stepper -->
+<section class="sec dark">
+  <div class="wrap wrap--w">
+    <header class="rec reveal">
+      <span class="rec__n">02 / <span data-es="PASO A PASO" data-en="STEP BY STEP">PASO A PASO</span></span>
+      <div class="rec__b">
+        <h2 data-es="Recorre cada paso" data-en="Walk through each step">Recorre cada paso</h2>
+        <p class="lede" data-es="Selecciona una etapa para ver qué ocurre, quién responde y qué la detiene."
+           data-en="Select a stage to see what happens, who is accountable and what stops it.">
+          Selecciona una etapa para ver qué ocurre, quién responde y qué la detiene.</p>
+      </div>
+    </header>
+
+    <div class="flow reveal" id="flow">
+      <ul class="flow__list" role="tablist" aria-orientation="vertical" aria-label="Pasos de la operación">
+        <li role="presentation"><button class="flow__btn" role="tab" id="t1" aria-controls="p1" aria-selected="true" type="button"><span class="flow__n">01</span><span class="flow__t" data-es="Recolección en origen" data-en="Origin pickup">Recolección en origen</span></button></li>
+        <li role="presentation"><button class="flow__btn" role="tab" id="t2" aria-controls="p2" aria-selected="false" type="button"><span class="flow__n">02</span><span class="flow__t" data-es="Consolidación" data-en="Consolidation">Consolidación</span></button></li>
+        <li role="presentation"><button class="flow__btn" role="tab" id="t3" aria-controls="p3" aria-selected="false" type="button"><span class="flow__n">03</span><span class="flow__t" data-es="Documentación" data-en="Documentation">Documentación</span></button></li>
+        <li role="presentation"><button class="flow__btn" role="tab" id="t4" aria-controls="p4" aria-selected="false" type="button"><span class="flow__n">04</span><span class="flow__t" data-es="Cruce fronterizo" data-en="Border crossing">Cruce fronterizo</span></button></li>
+        <li role="presentation"><button class="flow__btn" role="tab" id="t5" aria-controls="p5" aria-selected="false" type="button"><span class="flow__n">05</span><span class="flow__t" data-es="Recepción en almacén" data-en="Warehouse receipt">Recepción en almacén</span></button></li>
+        <li role="presentation"><button class="flow__btn" role="tab" id="t6" aria-controls="p6" aria-selected="false" type="button"><span class="flow__n">06</span><span class="flow__t" data-es="Surtido y despacho" data-en="Fulfillment &amp; dispatch">Surtido y despacho</span></button></li>
+        <li role="presentation"><button class="flow__btn" role="tab" id="t7" aria-controls="p7" aria-selected="false" type="button"><span class="flow__n">07</span><span class="flow__t" data-es="Última milla" data-en="Last mile">Última milla</span></button></li>
+      </ul>
+
+      <div>
+        <div class="flow__panel is-on" role="tabpanel" id="p1" aria-labelledby="t1">
+          <p class="eyebrow" data-es="Paso 01" data-en="Step 01">Paso 01</p>
+          <h3 data-es="Recolección en origen" data-en="Origin pickup">Recolección en origen</h3>
+          <p data-es="Coordinamos con tu planta o proveedor la ventana de carga, contratamos la unidad adecuada al tipo de mercancía y verificamos que lo que sube al camión coincida con lo que dice la orden. Un error de conteo aquí se descubre en la garita, y ahí cuesta un día."
+             data-en="We coordinate the loading window with your plant or supplier, book the right equipment for the cargo type and verify that what goes on the truck matches the order. A counting error here surfaces at the gate, and there it costs a day.">
+            Coordinamos con tu planta o proveedor la ventana de carga, contratamos la unidad adecuada al tipo de mercancía y verificamos que lo que sube al camión coincida con lo que dice la orden. Un error de conteo aquí se descubre en la garita, y ahí cuesta un día.</p>
+          <div class="flow__facts">
+            <div><b data-es="Orden de recolección" data-en="Pickup order">Orden de recolección</b><span data-es="Documento" data-en="Document">Documento</span></div>
+            <div><b data-es="Coordinador de tráfico" data-en="Traffic coordinator">Coordinador de tráfico</b><span data-es="Responsable" data-en="Owner">Responsable</span></div>
+            <div><b>H+0</b><span data-es="Tiempo transcurrido" data-en="Elapsed">Tiempo transcurrido</span></div>
+          </div>
+        </div>
+
+        <div class="flow__panel" role="tabpanel" id="p2" aria-labelledby="t2">
+          <p class="eyebrow" data-es="Paso 02" data-en="Step 02">Paso 02</p>
+          <h3 data-es="Consolidación" data-en="Consolidation">Consolidación</h3>
+          <p data-es="La carga llega a nuestro patio y se agrupa por destino, por régimen y por garita. Consolidar bien es lo que convierte varios envíos pequeños en un cruce rentable, y lo que evita que una unidad viaje media vacía."
+             data-en="Freight arrives at our yard and is grouped by destination, regime and port of entry. Consolidating well is what turns several small shipments into one economical crossing, and what stops a trailer travelling half empty.">
+            La carga llega a nuestro patio y se agrupa por destino, por régimen y por garita. Consolidar bien es lo que convierte varios envíos pequeños en un cruce rentable, y lo que evita que una unidad viaje media vacía.</p>
+          <div class="flow__facts">
+            <div><b data-es="Lista de empaque" data-en="Packing list">Lista de empaque</b><span data-es="Documento" data-en="Document">Documento</span></div>
+            <div><b data-es="Jefe de patio" data-en="Yard supervisor">Jefe de patio</b><span data-es="Responsable" data-en="Owner">Responsable</span></div>
+            <div><b>H+4</b><span data-es="Tiempo transcurrido" data-en="Elapsed">Tiempo transcurrido</span></div>
+          </div>
+        </div>
+
+        <div class="flow__panel" role="tabpanel" id="p3" aria-labelledby="t3">
+          <p class="eyebrow" data-es="Paso 03" data-en="Step 03">Paso 03</p>
+          <h3 data-es="Documentación" data-en="Documentation">Documentación</h3>
+          <p data-es="Aquí se gana o se pierde el cruce. Se clasifica la mercancía, se elabora el pedimento con el agente aduanal y se revisa que factura, lista de empaque y carta porte digan exactamente lo mismo. Revisamos antes de que la caja salga, no cuando ya está formada en la garita."
+             data-en="This is where the crossing is won or lost. Goods are classified, the pedimento is drawn up with the customs broker, and invoice, packing list and carta porte are checked to say exactly the same thing. We review before the trailer leaves, not once it is already queued at the gate.">
+            Aquí se gana o se pierde el cruce. Se clasifica la mercancía, se elabora el pedimento con el agente aduanal y se revisa que factura, lista de empaque y carta porte digan exactamente lo mismo. Revisamos antes de que la caja salga, no cuando ya está formada en la garita.</p>
+          <div class="flow__facts">
+            <div><b>Pedimento</b><span data-es="Documento" data-en="Document">Documento</span></div>
+            <div><b data-es="Agente aduanal" data-en="Customs broker">Agente aduanal</b><span data-es="Responsable" data-en="Owner">Responsable</span></div>
+            <div><b>H+8</b><span data-es="Tiempo transcurrido" data-en="Elapsed">Tiempo transcurrido</span></div>
+          </div>
+        </div>
+
+        <div class="flow__panel" role="tabpanel" id="p4" aria-labelledby="t4">
+          <p class="eyebrow" data-es="Paso 04" data-en="Step 04">Paso 04</p>
+          <h3 data-es="Cruce fronterizo" data-en="Border crossing">Cruce fronterizo</h3>
+          <p data-es="La unidad se programa por la garita que convenga ese día y pasa el reconocimiento aduanero. Nuestra certificación CTPAT y el estatus IVA/IEPS AAA reducen la probabilidad y la duración de una revisión física: no la eliminan, la vuelven excepción en vez de norma."
+             data-en="The truck is scheduled through whichever port of entry suits that day and goes through customs inspection. Our CTPAT certification and IVA/IEPS AAA status cut the probability and duration of a physical inspection: they do not remove it, they make it the exception rather than the rule.">
+            La unidad se programa por la garita que convenga ese día y pasa el reconocimiento aduanero. Nuestra certificación CTPAT y el estatus IVA/IEPS AAA reducen la probabilidad y la duración de una revisión física: no la eliminan, la vuelven excepción en vez de norma.</p>
+          <div class="flow__facts">
+            <div><b data-es="Liberación aduanera" data-en="Customs release">Liberación aduanera</b><span data-es="Documento" data-en="Document">Documento</span></div>
+            <div><b data-es="Operador certificado" data-en="Certified operator">Operador certificado</b><span data-es="Responsable" data-en="Owner">Responsable</span></div>
+            <div><b>H+12</b><span data-es="Tiempo transcurrido" data-en="Elapsed">Tiempo transcurrido</span></div>
+          </div>
+        </div>
+
+        <div class="flow__panel" role="tabpanel" id="p5" aria-labelledby="t5">
+          <p class="eyebrow" data-es="Paso 05" data-en="Step 05">Paso 05</p>
+          <h3 data-es="Recepción en almacén" data-en="Warehouse receipt">Recepción en almacén</h3>
+          <p data-es="La mercancía entra a la nave, se verifica contra documento y se ubica en posición asignada. Toda discrepancia se levanta el mismo día con evidencia fotográfica. Si tu inventario y el nuestro no cuadran, lo sabes antes de que se convierta en un problema de cierre."
+             data-en="Goods enter the building, are verified against the document and put away to an assigned location. Every discrepancy is raised the same day with photographic evidence. If your inventory and ours disagree, you know before it becomes a month-close problem.">
+            La mercancía entra a la nave, se verifica contra documento y se ubica en posición asignada. Toda discrepancia se levanta el mismo día con evidencia fotográfica. Si tu inventario y el nuestro no cuadran, lo sabes antes de que se convierta en un problema de cierre.</p>
+          <div class="flow__facts">
+            <div><b data-es="Acuse de recepción" data-en="Goods receipt">Acuse de recepción</b><span data-es="Documento" data-en="Document">Documento</span></div>
+            <div><b data-es="Jefe de almacén" data-en="Warehouse supervisor">Jefe de almacén</b><span data-es="Responsable" data-en="Owner">Responsable</span></div>
+            <div><b>H+24</b><span data-es="Tiempo transcurrido" data-en="Elapsed">Tiempo transcurrido</span></div>
+          </div>
+        </div>
+
+        <div class="flow__panel" role="tabpanel" id="p6" aria-labelledby="t6">
+          <p class="eyebrow" data-es="Paso 06" data-en="Step 06">Paso 06</p>
+          <h3 data-es="Surtido y despacho" data-en="Fulfillment &amp; dispatch">Surtido y despacho</h3>
+          <p data-es="Cuando entra un pedido se surte según tus reglas: por pedido, por ola o por ruta. Se empaca con tu especificación, se rotula y se programa la salida. Aquí es donde el almacenaje deja de ser guardar cosas y empieza a ser servicio."
+             data-en="When an order comes in it is picked to your rules: by order, by wave or by route. It is packed to your specification, labeled and scheduled out. This is where warehousing stops being storage and starts being service.">
+            Cuando entra un pedido se surte según tus reglas: por pedido, por ola o por ruta. Se empaca con tu especificación, se rotula y se programa la salida. Aquí es donde el almacenaje deja de ser guardar cosas y empieza a ser servicio.</p>
+          <div class="flow__facts">
+            <div><b data-es="Lista de surtido" data-en="Pick list">Lista de surtido</b><span data-es="Documento" data-en="Document">Documento</span></div>
+            <div><b data-es="Coordinador de surtido" data-en="Fulfillment lead">Coordinador de surtido</b><span data-es="Responsable" data-en="Owner">Responsable</span></div>
+            <div><b>H+36</b><span data-es="Tiempo transcurrido" data-en="Elapsed">Tiempo transcurrido</span></div>
+          </div>
+        </div>
+
+        <div class="flow__panel" role="tabpanel" id="p7" aria-labelledby="t7">
+          <p class="eyebrow" data-es="Paso 07" data-en="Step 07">Paso 07</p>
+          <h3 data-es="Última milla" data-en="Last mile">Última milla</h3>
+          <p data-es="Entrega en el destino final y confirmación documentada. El embarque no se cierra cuando sale de la nave: se cierra cuando existe prueba de entrega y el registro queda conciliado contra tu orden original."
+             data-en="Delivery at the final destination and documented confirmation. A shipment does not close when it leaves the building: it closes when proof of delivery exists and the record is reconciled against your original order.">
+            Entrega en el destino final y confirmación documentada. El embarque no se cierra cuando sale de la nave: se cierra cuando existe prueba de entrega y el registro queda conciliado contra tu orden original.</p>
+          <div class="flow__facts">
+            <div><b data-es="Prueba de entrega" data-en="Proof of delivery">Prueba de entrega</b><span data-es="Documento" data-en="Document">Documento</span></div>
+            <div><b data-es="Servicio a clientes" data-en="Customer service">Servicio a clientes</b><span data-es="Responsable" data-en="Owner">Responsable</span></div>
+            <div><b>H+48</b><span data-es="Tiempo transcurrido" data-en="Elapsed">Tiempo transcurrido</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="small mute" style="margin-top:1.6rem" data-es="Los tiempos transcurridos son una referencia de un cruce estándar sin incidencias. Un reconocimiento aduanero, un festivo o una corrección documental los mueven, y por eso el estado del embarque se reporta en vez de prometerse."
+       data-en="Elapsed times reference a standard crossing with no incidents. A customs inspection, a holiday or a document correction move them, which is why shipment status is reported rather than promised.">
+      Los tiempos transcurridos son una referencia de un cruce estándar sin incidencias. Un reconocimiento aduanero, un festivo o una corrección documental los mueven, y por eso el estado del embarque se reporta en vez de prometerse.</p>
+  </div>
+</section>
+
+<!-- 03 — documents -->
+<section class="sec sec--white">
+  <div class="wrap wrap--w">
+    <header class="rec reveal">
+      <span class="rec__n">03 / <span data-es="EXPEDIENTE" data-en="DOCUMENT SET">EXPEDIENTE</span></span>
+      <div class="rec__b">
+        <h2 data-es="Un cruce se detiene por papeles antes que por tráfico" data-en="A crossing is stopped by paperwork before it is stopped by traffic">Un cruce se detiene por papeles antes que por tráfico</h2>
+        <p class="lede" data-es="Seis documentos viajan con la carga y tienen que decir lo mismo entre sí. La causa más común de una demora no es la garita: es una descripción que no coincide, un peso mal capturado o una fracción arancelaria discutible."
+           data-en="Six documents travel with the freight and have to agree with each other. The most common cause of delay is not the gate: it is a description that does not match, a mis-keyed weight or a debatable tariff code.">
+          Seis documentos viajan con la carga y tienen que decir lo mismo entre sí. La causa más común de una demora no es la garita: es una descripción que no coincide, un peso mal capturado o una fracción arancelaria discutible.</p>
+      </div>
+    </header>
+    <div class="grid g-57">
+      <figure class="plate reveal" style="--ar:4/3" data-prompt="A flat overhead diagram of six stacked document sheets fanned in a stepped diagonal so each sheet&#x27;s top edge and title strip is visible. Titles in small uppercase from back to front: &#x27;COMMERCIAL INVOICE&#x27;, &#x27;PACKING LIST&#x27;, &#x27;BILL OF LADING&#x27;, &#x27;CARTA PORTE&#x27;, &#x27;PEDIMENTO&#x27;, &#x27;CERTIFICATE OF ORIGIN&#x27;. Each sheet drawn as a thin outlined rectangle with three or four short placeholder rule lines suggesting text, and a small square field block in the upper right. The frontmost sheet &#x27;PEDIMENTO&#x27; has a solid cyan title strip. Thin leader lines from the right edge point to two small callouts reading &#x27;ONE ERROR STOPS THE LOAD&#x27; and &#x27;FILED BEFORE ARRIVAL&#x27;. Strict brand palette only: navy #0A357F, corporate blue #0F62B4, cyan #1CA0E0, pale sky #BBDFF5, near-black navy #050C1A, paper white #F5F8FC. No other hues. Flat vector, no gradients except a single subtle cyan glow, no drop shadows, no 3D bevels, no stock-photo collage, no clip art. Thin 1.5px strokes, geometric precision, generous negative space, square corners. Any text must be short, in uppercase sans-serif, and spelled exactly as given.">
+  <div class="plate__box">
+    <img src="../assets/img/generated/ops-docs.png" decoding="async" alt="El expediente"
+         data-es-alt="El expediente" data-en-alt="The document set">
+    <div class="plate__ph">
+      <span class="plate__id">IMG · ops-docs.png · 4:3</span>
+      <div>
+        <p class="plate__brief">
+          <b data-es="El expediente" data-en="The document set">El expediente</b>
+          <span data-es="Los documentos que acompañan a la carga, dispuestos como un expediente escalonado." data-en="The documents that travel with the freight, laid out as a stepped file.">Los documentos que acompañan a la carga, dispuestos como un expediente escalonado.</span>
+        </p>
+        <button type="button" class="plate__act" data-es="Copiar prompt" data-en="Copy prompt">Copiar prompt</button>
+      </div>
+    </div>
+  </div>
+  <figcaption class="plate__cap">
+    <b>FIG. 02</b>
+    <span data-es="Un cruce se detiene por papeles antes que por tráfico." data-en="A crossing is stopped by paperwork long before it is stopped by traffic.">Un cruce se detiene por papeles antes que por tráfico.</span>
+  </figcaption>
+</figure>
+      <div class="reveal">
+        <h3 data-es="Nuestro control documental" data-en="Our document control">Nuestro control documental</h3>
+        <ul class="ticks">
+          <li data-es="Revisión cruzada de factura, lista de empaque y pedimento antes de la salida" data-en="Cross-check of invoice, packing list and pedimento before departure">Revisión cruzada de factura, lista de empaque y pedimento antes de la salida</li>
+          <li data-es="Clasificación arancelaria documentada y reutilizable entre embarques" data-en="Documented tariff classification, reusable across shipments">Clasificación arancelaria documentada y reutilizable entre embarques</li>
+          <li data-es="Archivo digital por embarque, disponible cuando lo pidas" data-en="Digital file per shipment, available on request">Archivo digital por embarque, disponible cuando lo pidas</li>
+          <li data-es="Trazabilidad de correcciones: quién cambió qué y cuándo" data-en="Traceability of corrections: who changed what and when">Trazabilidad de correcciones: quién cambió qué y cuándo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 — visibility -->
+<section class="sec sec--paper2">
+  <div class="wrap wrap--w">
+    <header class="rec reveal">
+      <span class="rec__n">04 / <span data-es="VISIBILIDAD" data-en="VISIBILITY">VISIBILIDAD</span></span>
+      <div class="rec__b">
+        <h2 data-es="El estado del embarque, sin llamar por teléfono" data-en="Shipment status, without a phone call">El estado del embarque, sin llamar por teléfono</h2>
+        <p class="lede" data-es="Cada embarque tiene número, hitos con hora y los documentos asociados. Preferimos que lo consultes a que nos escribas para preguntar dónde va."
+           data-en="Every shipment has a number, timestamped milestones and its attached documents. We would rather you look it up than write asking where it is.">
+          Cada embarque tiene número, hitos con hora y los documentos asociados. Preferimos que lo consultes a que nos escribas para preguntar dónde va.</p>
+      </div>
+    </header>
+    <figure class="plate reveal" style="--ar:16/10" data-prompt="A flat UI mockup of a shipment tracking screen on a dark near-black navy background, straight-on, no browser chrome, no cursor. Header strip with a monospaced reference code, a status pill reading &#x27;IN TRANSIT&#x27; in cyan, and a small uppercase label &#x27;ETA&#x27;. Main area: a vertical milestone timeline with seven rows, each a small circular node on a vertical rule, with a bold uppercase milestone label, a monospaced timestamp, and a short secondary line. The first four nodes filled cyan (completed), the fifth node a hollow cyan ring (current), the last two hollow grey. Right side panel titled &#x27;DOCUMENTS&#x27; listing four rows with small file glyphs. Crisp 1px separators, small uppercase labels, monospaced numerals. Strict brand palette only: navy #0A357F, corporate blue #0F62B4, cyan #1CA0E0, pale sky #BBDFF5, near-black navy #050C1A, paper white #F5F8FC. No other hues. Flat vector, no gradients except a single subtle cyan glow, no drop shadows, no 3D bevels, no stock-photo collage, no clip art. Thin 1.5px strokes, geometric precision, generous negative space, square corners. Any text must be short, in uppercase sans-serif, and spelled exactly as given.">
+  <div class="plate__box">
+    <img src="../assets/img/generated/ops-track.png" decoding="async" alt="Seguimiento de embarque"
+         data-es-alt="Seguimiento de embarque" data-en-alt="Shipment tracking">
+    <div class="plate__ph">
+      <span class="plate__id">IMG · ops-track.png · 16:10</span>
+      <div>
+        <p class="plate__brief">
+          <b data-es="Seguimiento de embarque" data-en="Shipment tracking">Seguimiento de embarque</b>
+          <span data-es="Mockup de la vista de seguimiento: estado del embarque, hitos y documentos asociados." data-en="UI mockup of the tracking view: shipment status, milestones and attached documents.">Mockup de la vista de seguimiento: estado del embarque, hitos y documentos asociados.</span>
+        </p>
+        <button type="button" class="plate__act" data-es="Copiar prompt" data-en="Copy prompt">Copiar prompt</button>
+      </div>
+    </div>
+  </div>
+  <figcaption class="plate__cap">
+    <b>FIG. 03</b>
+    <span data-es="El estado del embarque, legible sin llamar por teléfono." data-en="Shipment status, readable without picking up the phone.">El estado del embarque, legible sin llamar por teléfono.</span>
+  </figcaption>
+</figure>
+    <div class="btns">
+      <a class="btn btn--pri" href="../contacto/" data-es="Empezar un embarque" data-en="Start a shipment">Empezar un embarque</a>
+      <a class="btn btn--gho" href="../certificaciones/" data-es="Ver certificaciones" data-en="See certifications">Ver certificaciones</a>
+    </div>
+  </div>
+</section>
 
 <nav class="pager" aria-label="Páginas">
   <a href="../nearshoring/">

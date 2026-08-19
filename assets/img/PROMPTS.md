@@ -14,28 +14,28 @@ en cada uno para que todas las piezas se vean como un mismo sistema.
 | 1 | `home-corridor.png` | 16:9 | Inicio | Mapa del corredor Tijuana–San Diego |
 | 2 | `home-stack.png` | 4:3 | Inicio | Las tres capas de servicio |
 | 3 | `svc-scope.png` | 16:9 | Servicios | Alcance de cada servicio sobre la cadena |
-| 4 | `imp-tree.png` | 16:9 | — | Árbol de decisión: temporal o definitiva |
-| 5 | `imp-321.png` | 16:9 | — | Flujo Sección 321 |
-| 6 | `imp-yard.jpg` | 3:2 | — | Patio de contenedores |
-| 7 | `wh-plan.png` | 16:9 | — | Planta del almacén por zonas |
-| 8 | `wh-wms.png` | 16:10 | — | Tablero de inventario |
-| 9 | `wh-racks.jpg` | 3:2 | — | Interior de nave |
-| 10 | `shl-split.png` | 16:9 | — | Reparto de responsabilidades |
-| 11 | `shl-ramp.png` | 21:9 | — | Rampa de arranque |
-| 12 | `shl-floor.jpg` | 3:2 | — | Piso de producción |
-| 13 | `near-lanes.png` | 16:9 | — | Comparativa de carriles de suministro |
-| 14 | `near-crossing.jpg` | 21:9 | — | La frontera desde el aire |
-| 15 | `ops-flow.png` | 21:9 | — | Anatomía de un cruce |
-| 16 | `ops-docs.png` | 4:3 | — | El expediente |
-| 17 | `ops-track.png` | 16:10 | — | Seguimiento de embarque |
-| 18 | `fac-site.png` | 16:9 | — | Plano de conjunto |
-| 19 | `fac-aerial.jpg` | 21:9 | — | Vista aérea del conjunto |
-| 20 | `fac-security.png` | 16:9 | — | Capas de seguridad CTPAT |
-| 21 | `cert-matrix.png` | 16:9 | — | Qué habilita cada programa |
-| 22 | `abt-team.jpg` | 3:2 | — | El equipo |
-| 23 | `abt-arc.png` | 21:9 | — | Treinta años en una línea |
-| 24 | `cli-sectors.png` | 16:9 | — | Sectores atendidos |
-| 25 | `con-locate.png` | 16:9 | — | Cómo llegar |
+| 4 | `imp-tree.png` | 16:9 | Importación y Exportación | Árbol de decisión: temporal o definitiva |
+| 5 | `imp-321.png` | 16:9 | Importación y Exportación | Flujo Sección 321 |
+| 6 | `imp-yard.jpg` | 3:2 | Importación y Exportación | Patio de contenedores |
+| 7 | `wh-plan.png` | 16:9 | Almacenaje | Planta del almacén por zonas |
+| 8 | `wh-wms.png` | 16:10 | Almacenaje | Tablero de inventario |
+| 9 | `wh-racks.jpg` | 3:2 | Almacenaje | Interior de nave |
+| 10 | `shl-split.png` | 16:9 | Shelter | Reparto de responsabilidades |
+| 11 | `shl-ramp.png` | 21:9 | Shelter | Rampa de arranque |
+| 12 | `shl-floor.jpg` | 3:2 | Shelter | Piso de producción |
+| 13 | `near-lanes.png` | 16:9 | Nearshoring | Comparativa de carriles de suministro |
+| 14 | `near-crossing.jpg` | 21:9 | Nearshoring | La frontera desde el aire |
+| 15 | `ops-flow.png` | 21:9 | Operación | Anatomía de un cruce |
+| 16 | `ops-docs.png` | 4:3 | Operación | El expediente |
+| 17 | `ops-track.png` | 16:10 | Operación | Seguimiento de embarque |
+| 18 | `fac-site.png` | 16:9 | Instalaciones | Plano de conjunto |
+| 19 | `fac-aerial.jpg` | 21:9 | Instalaciones | Vista aérea del conjunto |
+| 20 | `fac-security.png` | 16:9 | Instalaciones | Capas de seguridad CTPAT |
+| 21 | `cert-matrix.png` | 16:9 | Certificaciones | Qué habilita cada programa |
+| 22 | `abt-team.jpg` | 3:2 | Nosotros | El equipo |
+| 23 | `abt-arc.png` | 21:9 | Nosotros | Treinta años en una línea |
+| 24 | `cli-sectors.png` | 16:9 | Clientes | Sectores atendidos |
+| 25 | `con-locate.png` | 16:9 | Contacto | Cómo llegar |
 
 ---
 

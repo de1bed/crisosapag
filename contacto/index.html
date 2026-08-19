@@ -119,7 +119,139 @@
 </div>
 
 <main id="main">
-<section class="phead dark"><div class="wrap wrap--w phead__in"><h1>contacto</h1></div></section>
+<section class="phead dark">
+  <div class="phead__glow" aria-hidden="true"></div>
+  <div class="wrap wrap--w phead__in">
+    <nav class="crumb" aria-label="Ruta">
+      <a href="../" data-es="Inicio" data-en="Home">Inicio</a><i>/</i>
+      <span aria-current="page" data-es="Contacto" data-en="Contact">Contacto</span>
+    </nav>
+    <h1 data-es="Hagamos avanzar tu operación" data-en="Let's move your operation forward">Hagamos avanzar tu operación</h1>
+    <p class="lede" data-es="Cuéntanos qué necesitas importar, almacenar o fabricar en México y te respondemos con una propuesta concreta. Entre más datos nos des, menos rangos y más números."
+       data-en="Tell us what you need to import, store or manufacture in Mexico and we come back with a concrete proposal. The more detail you give us, the fewer ranges and the more numbers.">
+      Cuéntanos qué necesitas importar, almacenar o fabricar en México y te respondemos con una propuesta concreta. Entre más datos nos des, menos rangos y más números.</p>
+  </div>
+</section>
+
+<section class="sec dark" style="padding-top:0">
+  <div class="wrap wrap--w">
+    <div class="grid g-57" style="align-items:start">
+      <div class="reveal">
+        <header class="rec">
+          <span class="rec__n">01</span>
+          <div class="rec__b">
+            <h2 style="font-size:var(--step-2)" data-es="Escríbenos" data-en="Write to us">Escríbenos</h2>
+          </div>
+        </header>
+        <form class="form" id="form" novalidate>
+          <div class="form__row">
+            <label for="f-name" data-es="Nombre" data-en="Name">Nombre</label>
+            <input id="f-name" name="name" type="text" required autocomplete="name"
+                   data-es-ph="Nombre y apellido" data-en-ph="First and last name" placeholder="Nombre y apellido">
+          </div>
+          <div class="form__row">
+            <label for="f-company" data-es="Empresa" data-en="Company">Empresa</label>
+            <input id="f-company" name="company" type="text" autocomplete="organization"
+                   data-es-ph="Razón social o marca" data-en-ph="Company or brand" placeholder="Razón social o marca">
+          </div>
+          <div class="grid g-2" style="gap:1.05rem">
+            <div class="form__row">
+              <label for="f-email" data-es="Correo" data-en="Email">Correo</label>
+              <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="nombre@empresa.com">
+            </div>
+            <div class="form__row">
+              <label for="f-phone" data-es="Teléfono" data-en="Phone">Teléfono</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+52 664 000 0000">
+            </div>
+          </div>
+          <div class="form__row">
+            <label for="f-service" data-es="Servicio de interés" data-en="Service of interest">Servicio de interés</label>
+            <select id="f-service" name="service">
+              <option value="Import/Export" data-es="Importación / Exportación" data-en="Import / Export">Importación / Exportación</option>
+              <option value="Warehousing" data-es="Almacenaje" data-en="Warehousing">Almacenaje</option>
+              <option value="Shelter">Shelter</option>
+              <option value="Nearshoring" data-es="Nearshoring — evaluación" data-en="Nearshoring — assessment">Nearshoring — evaluación</option>
+              <option value="Other" data-es="Otro" data-en="Other">Otro</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label for="f-msg" data-es="Mensaje" data-en="Message">Mensaje</label>
+            <textarea id="f-msg" name="message" rows="5" required
+                      data-es-ph="Producto, volumen mensual, origen y destino. Si ya tienes IMMEX u otro programa, dínoslo."
+                      data-en-ph="Product, monthly volume, origin and destination. If you already hold IMMEX or another program, tell us."
+                      placeholder="Producto, volumen mensual, origen y destino. Si ya tienes IMMEX u otro programa, dínoslo."></textarea>
+          </div>
+          <button class="btn btn--pri btn--full" type="submit" data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</button>
+          <p class="form__note" data-es="Abre tu cliente de correo con el mensaje ya redactado hacia info@crisosa.com. Si prefieres escribir directo, ese es el buzón."
+             data-en="Opens your email client with the message already drafted to info@crisosa.com. If you prefer to write directly, that is the inbox.">
+            Abre tu cliente de correo con el mensaje ya redactado hacia info@crisosa.com. Si prefieres escribir directo, ese es el buzón.</p>
+        </form>
+      </div>
+
+      <div class="reveal">
+        <header class="rec">
+          <span class="rec__n">02</span>
+          <div class="rec__b">
+            <h2 style="font-size:var(--step-2)" data-es="Datos directos" data-en="Direct details">Datos directos</h2>
+          </div>
+        </header>
+        <ul class="clist" style="margin-top:0">
+          <li><span class="clist__k" data-es="México" data-en="Mexico">México</span><a href="tel:+526646072000">+52 (664) 607-20-00</a></li>
+          <li><span class="clist__k">USA</span><a href="tel:+16192702229">+1 (619) 270-22-29</a></li>
+          <li><span class="clist__k" data-es="Correo" data-en="Email">Correo</span><a href="mailto:info@crisosa.com">info@crisosa.com</a></li>
+          <li><span class="clist__k" data-es="Ubicación" data-en="Location">Ubicación</span><span>Tijuana, Baja California, México</span></li>
+          <li><span class="clist__k" data-es="Dirección" data-en="Management">Dirección</span><span>Ing. Salvador López Vives</span></li>
+        </ul>
+
+        <h3 style="margin-top:2.4rem" data-es="Qué incluir en tu mensaje" data-en="What to include in your message">Qué incluir en tu mensaje</h3>
+        <ul class="ticks">
+          <li data-es="Producto y, si la tienes, fracción arancelaria" data-en="Product and, if you have it, tariff code">Producto y, si la tienes, fracción arancelaria</li>
+          <li data-es="Volumen mensual y unidad de manejo" data-en="Monthly volume and handling unit">Volumen mensual y unidad de manejo</li>
+          <li data-es="Origen y destino exactos" data-en="Exact origin and destination">Origen y destino exactos</li>
+          <li data-es="Si la mercancía regresa a EE. UU. o se queda en México" data-en="Whether the goods return to the U.S. or stay in Mexico">Si la mercancía regresa a EE. UU. o se queda en México</li>
+          <li data-es="Programas vigentes: IMMEX, PROSEC, certificaciones" data-en="Active programs: IMMEX, PROSEC, certifications">Programas vigentes: IMMEX, PROSEC, certificaciones</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap wrap--w">
+    <header class="rec reveal">
+      <span class="rec__n">03 / <span data-es="UBICACIÓN" data-en="LOCATION">UBICACIÓN</span></span>
+      <div class="rec__b">
+        <h2 data-es="Dónde estamos" data-en="Where we are">Dónde estamos</h2>
+        <p class="lede" data-es="Tijuana, Baja California, a minutos de las garitas comerciales de Otay Mesa y San Ysidro."
+           data-en="Tijuana, Baja California, minutes from the Otay Mesa and San Ysidro commercial ports of entry.">
+          Tijuana, Baja California, a minutos de las garitas comerciales de Otay Mesa y San Ysidro.</p>
+      </div>
+    </header>
+    <figure class="plate reveal" style="--ar:16/9" data-prompt="A minimal schematic locator map, top-down, transit-map style, not satellite. A bright cyan dashed horizontal line across the upper third labeled &#x27;BORDER&#x27;. Two gate markers on it labeled &#x27;OTAY MESA&#x27; and &#x27;SAN YSIDRO&#x27;. Below, a solid cyan square marker labeled &#x27;CRISOSA&#x27; with a short leader line reading &#x27;TIJUANA, BAJA CALIFORNIA&#x27;. Two thin route lines from the CRISOSA marker to each gate, each carrying a small distance pill such as &#x27;MIN&#x27; in uppercase. A third route to a small plane glyph labeled &#x27;TIJUANA AIRPORT&#x27;. Three or four unlabeled thin grey road lines for context. Faint dotted grid, corner tick marks. Strict brand palette only: navy #0A357F, corporate blue #0F62B4, cyan #1CA0E0, pale sky #BBDFF5, near-black navy #050C1A, paper white #F5F8FC. No other hues. Flat vector, no gradients except a single subtle cyan glow, no drop shadows, no 3D bevels, no stock-photo collage, no clip art. Thin 1.5px strokes, geometric precision, generous negative space, square corners. Any text must be short, in uppercase sans-serif, and spelled exactly as given.">
+  <div class="plate__box">
+    <img src="../assets/img/generated/con-locate.png" decoding="async" alt="Cómo llegar"
+         data-es-alt="Cómo llegar" data-en-alt="How to find us">
+    <div class="plate__ph">
+      <span class="plate__id">IMG · con-locate.png · 16:9</span>
+      <div>
+        <p class="plate__brief">
+          <b data-es="Cómo llegar" data-en="How to find us">Cómo llegar</b>
+          <span data-es="Mapa esquemático de la ubicación en Tijuana respecto a las dos garitas comerciales." data-en="Schematic map of the Tijuana location relative to the two commercial ports of entry.">Mapa esquemático de la ubicación en Tijuana respecto a las dos garitas comerciales.</span>
+        </p>
+        <button type="button" class="plate__act" data-es="Copiar prompt" data-en="Copy prompt">Copiar prompt</button>
+      </div>
+    </div>
+  </div>
+  <figcaption class="plate__cap">
+    <b>FIG. 01</b>
+    <span data-es="Ubicación respecto a las garitas y al aeropuerto." data-en="Location relative to the ports of entry and the airport.">Ubicación respecto a las garitas y al aeropuerto.</span>
+  </figcaption>
+</figure>
+    <p class="small mute" style="margin-top:1rem" data-es="Pendiente de publicar: domicilio completo. Escríbenos y te compartimos la dirección exacta y las indicaciones de acceso para transportistas."
+       data-en="Pending publication: full street address. Write to us and we share the exact address and carrier access instructions.">
+      Pendiente de publicar: domicilio completo. Escríbenos y te compartimos la dirección exacta y las indicaciones de acceso para transportistas.</p>
+  </div>
+</section>
 
 <nav class="pager" aria-label="Páginas">
   <a href="../clientes/">

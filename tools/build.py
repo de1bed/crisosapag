@@ -355,7 +355,7 @@ def plate(key, b, mods=""):
     <img src="{src}" decoding="async" alt="{html.escape(d['t_es'], quote=True)}"
          data-es-alt="{html.escape(d['t_es'], quote=True)}" data-en-alt="{html.escape(d['t_en'], quote=True)}">
     <div class="plate__ph">
-      <span class="plate__id">IMG · {key.upper()} · {ratio} · {d['file']}</span>
+      <span class="plate__id">IMG · {d['file']} · {ratio}</span>
       <div>
         <p class="plate__brief">
           <b data-es="{html.escape(d['t_es'], quote=True)}" data-en="{html.escape(d['t_en'], quote=True)}">{d['t_es']}</b>
