@@ -64,14 +64,15 @@ def build():
     head = re.search(r'<header class="hdr".*?</header>', home, re.S).group(0)
     mega = re.search(r'<div class="mega".*?\n</div>', home, re.S).group(0)
     foot = re.search(r'<footer class="ftr".*?</footer>', home, re.S).group(0)
-    head, mega, foot = (rewrite(x, "") for x in (head, mega, foot))
+    wa = re.search(r'<a class="wa".*?</a>', home, re.S).group(0)
+    head, mega, foot, wa = (rewrite(x, "") for x in (head, mega, foot, wa))
 
     # ── every route's <main> ────────────────────────────────────────
     routes, titles = {}, {}
     for p in PAGES:
         d, b = p[1], ("" if p[1] == "" else "../")
         src = (ROOT / (d if d else ".") / "index.html").read_text(encoding="utf-8")
-        body = re.search(r'<main id="main">(.*)</main>', src, re.S).group(1)
+        body = re.search(r'<main id="main"[^>]*>(.*)</main>', src, re.S).group(1)
         routes[ROUTE[d]] = rewrite(body, b)
         titles[ROUTE[d]] = (
             re.search(r'data-es-doctitle="([^"]+)"', src).group(1),
@@ -92,11 +93,13 @@ def build():
 {head}
 {mega}
 
-<main id="main">
+<main id="main" class="panels">
 {routes['#/']}
 </main>
 
 {foot}
+
+{wa}
 
 <script>
 {js}

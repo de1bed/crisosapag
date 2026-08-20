@@ -1,146 +1,138 @@
 # CRISOSA Logistic Solutions — sitio web
 
 Sitio corporativo de **CRISOSA Logistic Solutions** (Tijuana, B.C.). HTML, CSS y
-JavaScript estáticos: sin dependencias, sin proceso de build para servirlo, sin
-servidor de aplicación. Se sube tal cual a cualquier hosting.
+JavaScript estáticos: sin dependencias, sin servidor de aplicación, sin proceso de
+build para servirlo. Se sube tal cual a cualquier hosting.
+
+---
+
+## La idea
+
+El sitio es una **secuencia de pantallas completas**. Cada una lleva una fotografía,
+un titular, una línea y dos botones. La fotografía hace el 80% del trabajo y el texto
+el 20% — no al revés.
+
+El orden de la portada es deliberado: **primero lo que se presume.**
+
+1. Quiénes somos, en una frase
+2. **Certificaciones** — IVA/IEPS AAA, CTPAT, IMMEX, OEA en proceso
+3. **Clientes** — dieciséis marcas, a color y con espacio
+4. Las cifras — 1994 · 22,000 m² · 3 naves · 30+ años
+5. Los tres servicios
+6. Instalaciones
+7. Contacto
+
+No explicamos la operación paso a paso: quien contrata logística transfronteriza ya
+sabe cómo funciona un pedimento. Lo que no sabe es por qué CRISOSA.
 
 ---
 
 ## Rutas
 
-El sitio son doce páginas reales, cada una con su propia URL, título y descripción.
-No es una sola página con scroll infinito.
+Siete páginas reales, cada una con su URL, título y descripción.
 
-| # | Ruta | Qué contiene |
+| Ruta | Pantallas | Qué presume |
 |---|---|---|
-| 01 | `/` | Portada: corredor, tres servicios, operación, certificaciones, clientes |
-| 02 | `/servicios/` | Comparativa de las tres líneas + selector «¿cuál te corresponde?» |
-| 03 | `/importacion-exportacion/` | Regímenes temporal/definitivo, Sección 321, alcance |
-| 04 | `/almacenaje/` | Flujo interno, seis operaciones, capacidad por nave, visibilidad |
-| 05 | `/shelter/` | Reparto de responsabilidades, rampa de arranque, riesgo, salida |
-| 06 | `/nearshoring/` | Comparativa de carriles, por qué Tijuana, cómo entrar, límites |
-| 07 | `/operacion/` | Los siete pasos de un cruce (interactivo), expediente, seguimiento |
-| 08 | `/instalaciones/` | Plano de conjunto, capacidades, seguridad CTPAT |
-| 09 | `/certificaciones/` | IMMEX, IVA/IEPS AAA, CTPAT, OEA — qué habilita cada uno |
-| 10 | `/nosotros/` | Historia, forma de trabajar, dirección general |
-| 11 | `/clientes/` | Socios comerciales y sectores atendidos |
-| 12 | `/contacto/` | Formulario, datos directos, ubicación |
+| `/` | 7 | Certificaciones, clientes, cifras, servicios, instalaciones |
+| `/servicios/` | 5 | Importación y exportación, almacenaje, shelter |
+| `/certificaciones/` | 5 | Una pantalla por acreditación, con el sello en grande |
+| `/clientes/` | 3 | Las dieciséis marcas y los seis sectores |
+| `/instalaciones/` | 4 | Capacidad, andenes, seguridad CTPAT |
+| `/nosotros/` | 4 | Historia, forma de trabajar, dirección general |
+| `/contacto/` | 2 | Formulario, datos directos, ubicación |
 
-`404.html` cubre las rutas que no existen. Los enlaces internos son relativos,
-así que el sitio funciona igual en la raíz de un dominio o en un subdirectorio.
+`404.html` cubre lo que no existe. Los enlaces internos son relativos, así que el
+sitio funciona igual en la raíz de un dominio o en un subdirectorio.
+
+El **índice** (botón arriba a la derecha) abre las siete rutas a pantalla completa.
 
 ---
 
-## Espacios de imagen y sus prompts
+## Fotografías y sus prompts
 
-Cada figura del sitio es un **espacio reservado con proporción exacta**. Mientras
-el archivo no exista, el espacio se dibuja como una lámina técnica que muestra qué
-imagen va ahí y trae un botón **«Copiar prompt»**.
+Cada pantalla tiene reservado su espacio con la proporción exacta. Mientras el archivo
+no exista, la pantalla **conserva su composición** sobre un degradado y muestra abajo
+una línea discreta con el nombre del archivo y un botón **«Copiar prompt»**.
 
-Para llenar un espacio:
+Para llenar una:
 
-1. Abre la página, pulsa **Copiar prompt** en la lámina que quieras.
-2. Pégalo en ChatGPT (o el modelo de imagen que uses) y genera la imagen.
-3. Guarda el resultado en `assets/img/generated/` **con el nombre exacto** que
-   muestra la lámina (por ejemplo `ops-flow.png`).
-4. Recarga. La imagen aparece sola: no hay que tocar código.
+1. Pulsa **Copiar prompt** en la pantalla que quieras.
+2. Pégalo en ChatGPT (o el modelo de imagen que uses) y genera la fotografía.
+3. Guárdala en `assets/img/generated/` **con el nombre exacto** que muestra la línea.
+4. Recarga. Aparece sola: no hay que tocar código.
 
-El catálogo completo —25 láminas con su proporción, su nombre de archivo y su
-prompt— está en **[`assets/img/PROMPTS.md`](assets/img/PROMPTS.md)**, generado
-desde `tools/plates.py`.
+Las dieciséis fotografías, con proporción, nombre y prompt, están en
+**[`assets/img/PROMPTS.md`](assets/img/PROMPTS.md)**, generado desde `tools/plates.py`.
 
-Los prompts están escritos en inglés a propósito: los modelos de imagen siguen
-mejor un brief en inglés. Cada uno ya trae dentro la paleta y las restricciones de
-estilo, para que todas las piezas se vean como un mismo sistema y no como
-ilustraciones sueltas.
+Los prompts están en inglés a propósito —los modelos de imagen siguen mejor un brief
+en inglés— y **todos terminan con la misma dirección fotográfica**, para que las
+dieciséis piezas parezcan una sola sesión y no un banco de imágenes. Cada uno pide
+además **espacio vacío en el tercio superior**: ahí va el titular.
 
-Seis láminas ya vienen llenas con las fotografías extraídas de la presentación
-original. Pueden reemplazarse con material propio usando el mismo nombre de archivo.
+Siete espacios ya vienen llenos con las fotografías de la presentación original.
+Se reemplazan usando el mismo nombre de archivo.
 
 ---
 
 ## Diseño
 
-El sistema se llama **«Manifiesto»**: un manifiesto aduanal tratado como producto
-de software.
-
-- **Color.** Paleta corporativa —navy `#0A357F`, azul `#0F62B4`, cian `#1CA0E0`—
-  sobre dos fondos: papel frío `#F5F8FC` para lectura y navy casi negro `#050C1A`
-  para las bandas. Los grises están sesgados a azul, no son neutros de fábrica.
-- **Tipografía.** `Archivo` variable (se usa su eje de anchura: titulares
-  expandidos, acentos condensados) e `IBM Plex Mono` para etiquetas, cifras y
-  códigos. Ambas **auto-alojadas** en `assets/fonts/`: el sitio no hace ninguna
+- **Color.** Blanco y `#0E1116` (negro con una insinuación de azul) como fondos;
+  `#F4F6F9` para las pantallas claras; el navy corporativo `#0A357F` en los botones.
+  Los grises están sesgados a azul, no son neutros de fábrica.
+- **Tipografía.** `Manrope`, **una sola familia**, pesos 200 a 800. Nada de
+  monoespaciada. Auto-alojada en `assets/fonts/` (39 KB): el sitio no hace ninguna
   petición a terceros.
-- **Estructura.** Cada sección es un *registro numerado* sobre una regla capilar.
-  Los datos se leen como readouts monoespaciados. Las figuras van numeradas
-  `FIG. n` porque el orden es información, no adorno.
+- **Composición.** Titular arriba, botones abajo, todo centrado, mucho aire. Los
+  titulares se limitan a 19 caracteres por línea para que nunca lean como párrafo.
+- **Movimiento.** Aparición suave al entrar en pantalla y contadores en las cifras.
+  Nada más. Todo respeta `prefers-reduced-motion`.
 
-### Navegación
-
-- **Índice completo** en un overlay a pantalla completa (botón `Índice`), con las
-  doce rutas numeradas y descritas. Se cierra con `Esc`.
-- **Barra lateral** en las páginas largas, con seguimiento de la sección activa.
-- **Paginador** anterior/siguiente al pie: el sitio se puede leer en orden, como
-  un documento.
-
-### Elementos dinámicos
-
-| Dónde | Qué hace |
-|---|---|
-| Portada | Canvas del corredor fronterizo con embarques cruzando la línea |
-| Portada, Almacenaje | Contadores y barras de capacidad animadas al entrar en pantalla |
-| `/servicios/` | Selector que recomienda servicio según la situación del visitante |
-| `/operacion/` | Recorrido por los siete pasos del cruce, navegable con teclado |
-| Todas | Láminas con prompt copiable, revelado al hacer scroll, cambio EN/ES |
-
-Todo respeta `prefers-reduced-motion` y funciona con teclado.
+La cabecera **lee la pantalla que tiene debajo** y cambia de color: blanca sobre
+fotografía, oscura sobre fondo claro.
 
 ---
 
 ## Idiomas
 
 Bilingüe español/inglés. El texto vive en los atributos `data-es` y `data-en` del
-HTML; `assets/js/main.js` los intercambia, y también cambia el `<title>`, la
-meta descripción y los `placeholder` de los formularios.
+HTML; `assets/js/main.js` los intercambia, y también cambia el `<title>`, la meta
+descripción y los `placeholder` del formulario.
 
-El idioma inicial se toma del navegador —español si el navegador está en español,
-inglés en cualquier otro caso— y la elección del visitante se guarda en
+El idioma inicial se toma del navegador y la elección del visitante se guarda en
 `localStorage`.
 
 > **Al editar un texto hay que cambiar las dos versiones**, `data-es` y `data-en`.
 
 ---
 
-## Estructura de archivos
+## Estructura
 
 ```
 index.html                  Portada
-<ruta>/index.html           Las once páginas restantes
-404.html
-assets/css/styles.css       Sistema de diseño completo
-assets/js/main.js           Todo el comportamiento
-assets/fonts/               Archivo + IBM Plex Mono (auto-alojadas)
-assets/img/generated/       Imágenes generadas — aquí van las nuevas
+<ruta>/index.html           Las seis páginas restantes
+404.html · sitemap.xml · robots.txt
+assets/css/styles.css       Sistema de diseño completo (~470 líneas)
+assets/js/main.js           Todo el comportamiento (~230 líneas)
+assets/fonts/               Manrope (auto-alojada)
+assets/img/generated/       Fotografías — aquí van las nuevas
 assets/img/PROMPTS.md       Catálogo de prompts
 assets/logos/               Logo CRISOSA, certificaciones y clientes
 tools/build.py              Compone las rutas desde el shell compartido
-tools/plates.py             Catálogo de imágenes y prompts
+tools/plates.py             Catálogo de fotografías y prompts
 tools/parts/*.html          Cuerpo de cada página
+tools/trim_logos.py         Recorta el margen muerto de los logos
+tools/preview.py            Empaqueta todo en un solo archivo
 ```
 
 ### Editar el sitio
 
-- **Cambiar un texto:** edítalo directamente en el HTML generado, o en
-  `tools/parts/<ruta>.html` si quieres que sobreviva a la siguiente compilación.
-- **Cambiar cabecera, menú, pie o paginador:** están en `tools/build.py`, en un
-  solo lugar para las doce páginas. Después:
-
-  ```bash
-  python3 tools/build.py
-  ```
-
-- **Añadir o cambiar una imagen:** edita `tools/plates.py` y recompila. El
-  `PROMPTS.md` se regenera solo.
+- **Un texto:** edítalo en el HTML generado, o en `tools/parts/<ruta>.html` si quieres
+  que sobreviva a la siguiente compilación.
+- **Cabecera, índice o pie:** están en `tools/build.py`, en un solo lugar para las
+  siete páginas. Después: `python3 tools/build.py`
+- **Una fotografía:** edita `tools/plates.py` y recompila. `PROMPTS.md` se regenera solo.
+- **Un logo nuevo:** ponlo en `assets/logos/` y corre `python3 tools/trim_logos.py`
+  para que quede ópticamente al mismo peso que los demás.
 
 ### Verlo en local
 
@@ -150,29 +142,34 @@ python3 -m http.server 8080
 
 Y abrir <http://localhost:8080>.
 
+Para mandárselo a alguien sin publicarlo: `python3 tools/preview.py` genera
+`dist/crisosa-preview.html`, un solo archivo con las siete rutas navegables dentro.
+
 ---
 
 ## Pendientes antes de publicar
 
-- [ ] **Generar las imágenes.** 19 láminas siguen vacías. Están listadas en
-      `assets/img/PROMPTS.md` con su prompt.
-- [ ] **Correo de contacto.** El formulario abre el cliente de correo del
-      visitante apuntando a `info@crisosa.com`, definido en `CONTACT_EMAIL` al
-      inicio de `assets/js/main.js`. Hay que confirmar la dirección real.
-- [ ] **Domicilio completo.** El sitio dice sólo «Tijuana, Baja California,
-      México». Falta el domicilio y, si se quiere, un mapa embebido en
-      `/contacto/`.
-- [ ] **Datos de instalaciones.** El reparto de superficie por nave
-      (9,000 / 7,500 / 5,500 m²), el número de andenes y la altura libre están
-      puestos como referencia y deben confirmarse.
-- [ ] **Cifras de la ficha técnica.** Igual con los tiempos `H+n` de
-      `/operacion/`: hoy describen un cruce estándar, conviene validarlos contra
-      la operación real.
+- [ ] **Generar las fotografías.** Nueve espacios siguen vacíos. Los prompts están en
+      `assets/img/PROMPTS.md`.
+- [ ] **Dominio real.** `SITE` al final de `tools/build.py` dice
+      `https://www.crisosa.com`. De ahí salen la URL canónica, el `og:image` y el
+      `sitemap.xml`: **con el dominio equivocado, las vistas previas al compartir el
+      enlace no funcionan.**
+- [ ] **WhatsApp.** El botón flotante apunta a `+52 664 607 2000` (`WHATSAPP` en
+      `tools/build.py`). Confirmar que ese número tiene WhatsApp Business, o cambiarlo.
+- [ ] **Correo de contacto.** El formulario abre el cliente de correo apuntando a
+      `info@crisosa.com` (`CONTACT_EMAIL` en `assets/js/main.js`). Confirmar.
+- [ ] **Domicilio completo.** El sitio dice sólo «Tijuana, Baja California». Falta el
+      domicilio y, si se quiere, un mapa en `/contacto/`.
+- [ ] **Casos de éxito.** Los logos son presencia, no evidencia. Dos o tres casos con
+      números —aunque sean anónimos— valdrían más que los dieciséis logos juntos.
+- [ ] **Datos por confirmar.** El reparto de superficie por nave
+      (9,000 / 7,500 / 5,500 m²) está puesto como referencia y así se declara en la
+      página. Falta validarlo.
 - [ ] **Logo de cliente sin identificar.** `assets/logos/horse.png` aparece en la
-      presentación sin nombre legible; lleva el texto alternativo genérico
-      «Socio comercial».
-- [ ] **Formulario con backend.** El `mailto:` funciona sin servidor; si se
-      quiere recibir los mensajes en una bandeja o CRM hay que conectar un
+      presentación sin nombre legible; lleva el alt genérico «Socio comercial».
+- [ ] **Formulario con backend.** El `mailto:` funciona sin servidor, pero pierde
+      contactos. Si se quiere recibirlos en una bandeja o CRM hay que conectar un
       servicio de formularios.
-- [ ] **Autorización de logos.** Confirmar que los clientes listados autorizan el
-      uso de su marca en el sitio público.
+- [ ] **Autorización de logos.** Confirmar que los clientes autorizan el uso de su
+      marca en el sitio público.
