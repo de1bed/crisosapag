@@ -30,6 +30,8 @@ LOOK = (
     "Compose with generous empty space across the upper third so a headline can sit over it."
 )
 
+# kind="ai"   → paste the prompt into an image model
+# kind="foto" → a photograph someone has to take; the text is the shooting brief
 PLATES = {
 
 # ══ HOME ══════════════════════════════════════════════════════════
@@ -68,14 +70,10 @@ PLATES = {
     "Almost empty of people. The feeling is precision and scale. " + LOOK)),
 
 "home-facility": dict(
-  file="home-facility.jpg", ar="21/9",
+  file="home-facility.jpg", ar="21/9", kind="foto",
   t_es="Instalaciones — patio de maniobras",
   t_en="Facilities — the maneuvering yard",
-  prompt=(
-    "Wide low-angle photograph across the concrete maneuvering yard of an industrial warehouse "
-    "complex in late afternoon, long shadows stretching toward the camera. "
-    "A tractor unit turning between two rows of parked trailers, a fenced perimeter with "
-    "light masts, dry brown hills on the horizon under a pale clean sky. " + LOOK)),
+  prompt='Fotografía del patio de maniobras a ras de suelo, a última hora de la tarde, mirando a lo largo del patio para que las sombras vengan hacia la cámara. Que entre una unidad maniobrando entre dos filas de cajas estacionadas. Cámara baja, a la altura del pecho, gran angular. Encuadre 21:9 con espacio de cielo arriba. Sin gente posando y sin coches particulares en cuadro.'),
 
 # ══ SERVICIOS ═════════════════════════════════════════════════════
 "svc-hero": dict(
@@ -132,25 +130,17 @@ PLATES = {
 
 # ══ CLIENTES ══════════════════════════════════════════════════════
 "cli-hero": dict(
-  file="cli-hero.jpg", ar="16/9",
+  file="cli-hero.jpg", ar="16/9", kind="foto",
   t_es="Clientes — mercancía lista para salir",
   t_en="Clients — freight ready to leave",
-  prompt=(
-    "Photograph inside a warehouse near the outbound docks: a long line of wrapped and labelled "
-    "pallets staged in perfect alignment on the floor, waiting to be loaded, with open dock "
-    "doors at the end of the row spilling in bright daylight. "
-    "Labels blank and unreadable. Order and readiness. " + LOOK)),
+  prompt='Fotografía dentro de la nave, cerca de los andenes de salida: una fila larga de tarimas emplayadas y etiquetadas, alineadas en el piso esperando carga, con los portones abiertos al fondo dejando entrar luz de día. Cámara a la altura del pecho, mirando a lo largo de la fila para que se vea la perspectiva. Etiquetas ilegibles a esa distancia. Piso barrido. Encuadre 16:9.'),
 
 # ══ INSTALACIONES ═════════════════════════════════════════════════
 "fac-hero": dict(
-  file="fac-hero.jpg", ar="21/9",
+  file="fac-hero.jpg", ar="21/9", kind="foto",
   t_es="Instalaciones — vista aérea del conjunto",
   t_en="Facilities — aerial view of the site",
-  prompt=(
-    "High aerial photograph, straight down at a slight angle, of three large flat-roofed "
-    "warehouses arranged around a shared concrete yard, surrounded by a fenced perimeter, "
-    "with trailers parked in neat rows. Late afternoon light, long clean shadows, "
-    "dry brown terrain around the site. Almost architectural in its symmetry. " + LOOK)),
+  prompt='Fotografía aérea del conjunto, con dron, a unos 120–150 metros y en ángulo inclinado (no cenital), de modo que se vean los techos, el patio de maniobras y las cajas estacionadas en fila. Volar a última hora de la tarde, con el sol bajo: las sombras largas son lo que da volumen al conjunto. Encuadre horizontal muy panorámico (21:9) con el edificio en el tercio inferior y cielo limpio arriba, que es donde va el titular. Patio despejado y ordenado antes de volar.'),
 
 "fac-docks": dict(
   file="fac-docks.jpg", ar="16/9",
@@ -162,28 +152,33 @@ PLATES = {
     "strong perspective, clean concrete apron in the foreground, overcast even light. " + LOOK)),
 
 "fac-security": dict(
-  file="fac-security.jpg", ar="16/9",
+  file="fac-security.jpg", ar="16/9", kind="foto",
   t_es="Instalaciones — control de acceso",
   t_en="Facilities — access control",
-  prompt=(
-    "Photograph of the vehicle entrance to a secure industrial facility at dusk: a lit guard "
-    "booth beside a lowered barrier arm, a fenced perimeter running away from the camera, "
-    "a camera mast overhead, the yard beyond in soft focus with warm interior light. "
-    "No readable signage. Controlled and calm rather than intimidating. " + LOOK)),
+  prompt='Fotografía del acceso vehicular al anochecer: la caseta de vigilancia encendida, la pluma abajo, la barda perimetral alejándose de la cámara y el patio al fondo en penumbra con luz cálida. Tomar en el momento en que todavía hay algo de azul en el cielo. Que no se lea ningún letrero ni placa. La idea es que se vea controlado y tranquilo, no intimidante. Encuadre 16:9.'),
 
 # ══ NOSOTROS ══════════════════════════════════════════════════════
 "abt-hero": dict(
-  file="abt-hero.jpg", ar="16/9",
+  file="abt-hero.jpg", ar="16/9", kind="foto",
   t_es="Nosotros — la nave al amanecer",
   t_en="About — the building at first light",
+  prompt='Fotografía exterior de la nave a primera hora de la mañana, desde el otro lado del patio vacío: la fachada recibiendo el primer sol cálido mientras el cielo todavía está azul frío. Una sola caja en andén, nadie en cuadro, sombras largas y quietas. Encuadre 16:9, amplio, casi de naturaleza muerta. Es el retrato del edificio, no una foto de operación.'),
+
+"abt-truck": dict(
+  file="abt-truck.jpg", ar="3/2", kind="foto",
+  t_es="Nosotros — la unidad de reparto",
+  t_en="About — the delivery unit",
   prompt=(
-    "Exterior photograph of a large warehouse building at first light, shot from across the "
-    "empty yard, the facade catching the first warm sun while the sky is still cool blue. "
-    "A single trailer at a dock, no people, long quiet shadows. "
-    "The composition is calm and wide, almost still-life. " + LOOK)),
+    "Photograph one of the CRISOSA box trucks, three-quarter front view, with the "
+    "dolphin logo and the phone number clearly readable on the side. "
+    "Shoot late afternoon with the sun behind you so the white body is bright and the "
+    "logo has contrast; put the truck against a plain wall or the warehouse facade, not "
+    "against parked cars or a busy street. Stand about 8 metres away at chest height and "
+    "leave a little empty space above the roof. Clean the unit first: this is the piece of "
+    "the brand that drives around the city.")),
 
 "abt-team": dict(
-  file="abt-team.jpg", ar="3/2",
+  file="abt-team.jpg", ar="3/2", kind="foto",
   t_es="Nosotros — el equipo",
   t_en="About — the team",
   prompt=(
@@ -193,13 +188,34 @@ PLATES = {
     "warm late-afternoon side light, the blue steel structure of the building behind them. "
     "Authentic and unposed rather than corporate stock. " + LOOK)),
 
-# ══ CONTACTO ══════════════════════════════════════════════════════
-"con-hero": dict(
-  file="con-hero.jpg", ar="16/9",
-  t_es="Contacto — Tijuana desde el aire",
-  t_en="Contact — Tijuana from the air",
-  prompt=(
-    "Aerial photograph of the Tijuana industrial district at dusk, the grid of warehouse roofs "
-    "and lit streets stretching toward the border, the lights of San Diego visible beyond, "
-    "dry hills to one side, deep blue sky. Wide, quiet, cinematic. " + LOOK)),
+# ══ NOSOTROS — retratos de líderes de área ════════════════════════
+"lead-1": dict(
+  file="lead-1.jpg", ar="4/5", kind="foto",
+  t_es="Retrato — Dirección General",
+  t_en="Portrait — General Management",
+  prompt='Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.'),
+
+"lead-2": dict(
+  file="lead-2.jpg", ar="4/5", kind="foto",
+  t_es="Retrato — Dirección de Operaciones",
+  t_en="Portrait — Operations",
+  prompt='Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.'),
+
+"lead-3": dict(
+  file="lead-3.jpg", ar="4/5", kind="foto",
+  t_es="Retrato — Comercio Exterior",
+  t_en="Portrait — Foreign Trade",
+  prompt='Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.'),
+
+"lead-4": dict(
+  file="lead-4.jpg", ar="4/5", kind="foto",
+  t_es="Retrato — Almacén y Distribución",
+  t_en="Portrait — Warehousing & Distribution",
+  prompt='Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.'),
+
+"lead-5": dict(
+  file="lead-5.jpg", ar="4/5", kind="foto",
+  t_es="Retrato — Atención a Clientes",
+  t_en="Portrait — Customer Service",
+  prompt='Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.'),
 }

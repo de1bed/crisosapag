@@ -16,7 +16,7 @@ El orden de la portada es deliberado: **primero lo que se presume.**
 
 1. Quiénes somos, en una frase
 2. **Certificaciones** — IVA/IEPS AAA, CTPAT, IMMEX, OEA en proceso
-3. **Clientes** — dieciséis marcas, a color y con espacio
+3. **Clientes** — las marcas, a color y con espacio
 4. Las cifras — 1994 · 22,000 m² · 3 naves · 30+ años
 5. Los tres servicios
 6. Instalaciones
@@ -48,6 +48,28 @@ El **índice** (botón arriba a la derecha) abre las siete rutas a pantalla comp
 
 ---
 
+## Diagramas dibujados
+
+Tres figuras del sitio **no son imágenes**: están dibujadas en SVG y se generan
+desde `tools/diagrams.py`.
+
+| Figura | Dónde | Qué muestra |
+|---|---|---|
+| `cutaway.svg` | Instalaciones | Planta y corte de una nave, con el recorrido de la mercancía de andén a andén |
+| `scale.svg` | Instalaciones | Las naves dibujadas a escala: el ancho de cada bloque es proporcional a su superficie |
+| `corridor.svg` | Contacto | Dónde está CRISOSA respecto a las dos garitas comerciales |
+
+Se inlinean en la página, así que **cambian de idioma** con el resto del sitio y
+se ven nítidas a cualquier tamaño. Para añadir una cuarta nave basta editar la
+lista `NAVES` al inicio de `tools/diagrams.py` y recompilar: la escala y el total
+se recalculan solos.
+
+```bash
+python3 tools/diagrams.py && python3 tools/build.py
+```
+
+---
+
 ## Fotografías y sus prompts
 
 Cada pantalla tiene reservado su espacio con la proporción exacta. Mientras el archivo
@@ -57,20 +79,25 @@ una línea discreta con el nombre del archivo y un botón **«Copiar prompt»**.
 Para llenar una:
 
 1. Pulsa **Copiar prompt** en la pantalla que quieras.
-2. Pégalo en ChatGPT (o el modelo de imagen que uses) y genera la fotografía.
+2. Genera la imagen, o tómala con cámara si el espacio es de los que hay que fotografiar.
 3. Guárdala en `assets/img/generated/` **con el nombre exacto** que muestra la línea.
 4. Recarga. Aparece sola: no hay que tocar código.
 
-Las dieciséis fotografías, con proporción, nombre y prompt, están en
-**[`assets/img/PROMPTS.md`](assets/img/PROMPTS.md)**, generado desde `tools/plates.py`.
+El catálogo completo está en **[`assets/img/PROMPTS.md`](assets/img/PROMPTS.md)**,
+generado desde `tools/plates.py`, y separa dos tipos de espacio:
 
-Los prompts están en inglés a propósito —los modelos de imagen siguen mejor un brief
-en inglés— y **todos terminan con la misma dirección fotográfica**, para que las
-dieciséis piezas parezcan una sola sesión y no un banco de imágenes. Cada uno pide
-además **espacio vacío en el tercio superior**: ahí va el titular.
+- **Para generar** con un modelo de imagen. El prompt va en inglés a propósito —los
+  modelos siguen mejor un brief en inglés—, todos terminan con la misma dirección
+  fotográfica para que las piezas parezcan una sola sesión, y todos piden **espacio
+  vacío en el tercio superior**, que es donde cae el titular.
+- **Para fotografiar de verdad.** El conjunto, el patio, el acceso, la unidad de
+  reparto, el equipo y los retratos de los líderes de área. Son los activos y la
+  gente de CRISOSA: ninguna imagen generada los sustituye. El texto es la guía de
+  toma —encuadre, luz, fondo— para que las cinco fotos de líderes se vean como un
+  equipo y no como cinco fotos sueltas.
 
-Siete espacios ya vienen llenos con las fotografías de la presentación original.
-Se reemplazan usando el mismo nombre de archivo.
+Algunos espacios ya vienen llenos con material real. Se reemplazan usando el mismo
+nombre de archivo.
 
 ---
 
@@ -121,7 +148,9 @@ tools/build.py              Compone las rutas desde el shell compartido
 tools/plates.py             Catálogo de fotografías y prompts
 tools/parts/*.html          Cuerpo de cada página
 tools/trim_logos.py         Recorta el margen muerto de los logos
+tools/diagrams.py           Dibuja las figuras SVG
 tools/preview.py            Empaqueta todo en un solo archivo
+assets/svg/                 Las figuras dibujadas
 ```
 
 ### Editar el sitio
@@ -133,6 +162,8 @@ tools/preview.py            Empaqueta todo en un solo archivo
 - **Una fotografía:** edita `tools/plates.py` y recompila. `PROMPTS.md` se regenera solo.
 - **Un logo nuevo:** ponlo en `assets/logos/` y corre `python3 tools/trim_logos.py`
   para que quede ópticamente al mismo peso que los demás.
+- **Un diagrama:** edítalo en `tools/diagrams.py` y corre
+  `python3 tools/diagrams.py && python3 tools/build.py`.
 
 ### Verlo en local
 
@@ -149,8 +180,11 @@ Para mandárselo a alguien sin publicarlo: `python3 tools/preview.py` genera
 
 ## Pendientes antes de publicar
 
-- [ ] **Generar las fotografías.** Nueve espacios siguen vacíos. Los prompts están en
-      `assets/img/PROMPTS.md`.
+- [ ] **Las imágenes.** Ver `assets/img/PROMPTS.md`: separa las que se generan con
+      un modelo de las que hay que fotografiar en sitio.
+- [ ] **Nombres de los líderes de área.** `/nosotros/` publica cinco puestos con
+      «Nombre por confirmar». Los puestos están en `tools/parts/nosotros.html` y los
+      retratos en `tools/plates.py` (`lead-1` a `lead-5`).
 - [ ] **Dominio real.** `SITE` al final de `tools/build.py` dice
       `https://www.crisosa.com`. De ahí salen la URL canónica, el `og:image` y el
       `sitemap.xml`: **con el dominio equivocado, las vistas previas al compartir el

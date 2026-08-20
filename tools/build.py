@@ -91,7 +91,8 @@ META = {
 
 # ── Photograph slots ────────────────────────────────────────────────
 PLATE_PAGE = {}
-SLOT_RE = re.compile(r"\{\{(BG|CARD|SHOT):([a-z0-9\-]+)\}\}")
+SLOT_RE = re.compile(r"\{\{(BG|CARD|SHOT|PORTRAIT):([a-z0-9\-]+)\}\}")
+SVG_RE = re.compile(r"\{\{SVG:([a-z0-9\-]+)\}\}")
 
 
 def slot(kind, key, b):
@@ -103,8 +104,9 @@ def slot(kind, key, b):
         "BG":   f'<img class="panel__bg" src="{src}" alt=""{eager} decoding="async">',
         "CARD": f'<img class="tcard__bg" src="{src}" alt=""{eager} decoding="async">',
         "SHOT": f'<img src="{src}" alt=""{eager} decoding="async">',
+        "PORTRAIT": f'<img src="{src}" alt=""{eager} decoding="async">',
     }[kind]
-    ph_class = "ph ph--light" if kind == "SHOT" else "ph"
+    ph_class = "ph ph--light" if kind in ("SHOT", "PORTRAIT") else "ph"
     scrim = '\n      <div class="panel__scrim"></div>' if kind == "BG" else ""
     return f"""{img}
       <div class="{ph_class}" data-prompt="{html.escape(d['prompt'], quote=True)}">
@@ -120,7 +122,11 @@ def expand(body, b, page=""):
     def sub(m):
         PLATE_PAGE.setdefault(m.group(2), page)
         return slot(m.group(1), m.group(2), b)
-    return SLOT_RE.sub(sub, body)
+    body = SLOT_RE.sub(sub, body)
+    # figures are inlined, not linked: they inherit the page's type and colours
+    return SVG_RE.sub(
+        lambda m: (ROOT / "assets" / "svg" / f"{m.group(1)}.svg").read_text(encoding="utf-8").strip(),
+        body)
 
 
 # ── Shell ───────────────────────────────────────────────────────────
@@ -340,39 +346,64 @@ def write_sitemap():
 
 
 def write_prompts():
-    lines = [
-        "# Fotografías del sitio y sus prompts",
+    """Regenerate assets/img/PROMPTS.md from the catalogue."""
+    have = {f.name for f in (ROOT / "assets" / "img" / "generated").glob("*")}
+    ai = [(k, d) for k, d in PLATES.items() if d.get("kind") != "foto"]
+    photo = [(k, d) for k, d in PLATES.items() if d.get("kind") == "foto"]
+    pending = [k for k, d in PLATES.items() if d["file"] not in have]
+
+    L = [
+        "# Imágenes del sitio",
         "",
-        "El sitio es una secuencia de pantallas y **la fotografía es el 80% de cada una**.",
-        "Mientras un archivo no exista, su pantalla conserva la composición sobre un fondo",
-        "degradado y muestra una línea discreta con el nombre del archivo y un botón",
-        "**«Copiar prompt»**.",
+        f"El sitio tiene **{len(PLATES)} espacios de imagen**. "
+        f"Hoy faltan **{len(pending)}**.",
         "",
-        "Para llenar una: copia el prompt, genéralo, y guarda el resultado en",
-        "`assets/img/generated/` con **exactamente** el nombre indicado. La página lo toma",
-        "sola, sin tocar código.",
+        "Mientras un archivo no exista, su pantalla conserva la composición sobre un",
+        "degradado y muestra abajo una línea con el nombre del archivo y un botón",
+        "**«Copiar prompt»**. Para llenarla: genera o toma la imagen y guárdala en",
+        "`assets/img/generated/` **con exactamente el nombre indicado**. La página la",
+        "toma sola, sin tocar código.",
         "",
-        "Los prompts están en inglés a propósito: los modelos de imagen siguen mejor un brief",
-        "en inglés. Todos terminan con la misma dirección fotográfica, para que las dieciséis",
-        "piezas parezcan una sola sesión y no un banco de imágenes.",
+        "Hay dos tipos de espacio y no se resuelven igual:",
         "",
-        "> Cada prompt pide **espacio vacío en el tercio superior**: ahí va el titular.",
+        f"- **{len(ai)} para generar** con un modelo de imagen. El prompt va en inglés a",
+        "  propósito: los modelos siguen mejor un brief en inglés. Todos terminan con la",
+        "  misma dirección fotográfica para que parezcan una sola sesión, y todos piden",
+        "  **espacio vacío en el tercio superior**, que es donde va el titular.",
+        f"- **{len(photo)} para fotografiar de verdad.** Son la gente y los activos de",
+        "  CRISOSA; ninguna imagen generada los sustituye. El texto es la guía de toma.",
         "",
-        "| # | Archivo | Proporción | Página | Qué es |",
-        "|---|---|---|---|---|",
+        "> Los diagramas del sitio —planta y corte de la nave, las naves a escala y el",
+        "> mapa del corredor— **no son imágenes**: están dibujados en SVG y viven en",
+        "> `assets/svg/`. Se editan en `tools/diagrams.py`, no se generan.",
+        "",
+        "| # | Archivo | Proporción | Página | Tipo | Estado |",
+        "|---|---|---|---|---|---|",
     ]
     for i, (k, d) in enumerate(PLATES.items(), 1):
-        lines.append(f"| {i} | `{d['file']}` | {d['ar'].replace('/', ':')} | "
-                     f"{PLATE_PAGE.get(k, '—')} | {d['t_es']} |")
-    lines.append("")
-    for i, (k, d) in enumerate(PLATES.items(), 1):
-        lines += ["---", "",
-                  f"## {i}. `{d['file']}` — {d['t_es']}", "",
-                  f"- **Proporción:** {d['ar'].replace('/', ':')}",
-                  f"- **Guardar en:** `assets/img/generated/{d['file']}`",
-                  f"- **Página:** {PLATE_PAGE.get(k, '—')}", "",
-                  "```text", d["prompt"], "```", ""]
-    (ROOT / "assets" / "img" / "PROMPTS.md").write_text("\n".join(lines), encoding="utf-8")
+        kind = "Fotografiar" if d.get("kind") == "foto" else "Generar"
+        state = "✅ puesta" if d["file"] in have else "⬜ falta"
+        L.append(f"| {i} | `{d['file']}` | {d['ar'].replace('/', ':')} | "
+                 f"{PLATE_PAGE.get(k, '—')} | {kind} | {state} |")
+    L.append("")
+
+    for title, group, note in (
+        ("Para generar con un modelo de imagen", ai,
+         "Copia el bloque completo, pégalo en ChatGPT y exporta el resultado."),
+        ("Para fotografiar", photo,
+         "Estas no se generan: son personas y activos reales de CRISOSA."),
+    ):
+        L += ["---", "", f"# {title}", "", note, ""]
+        for k, d in group:
+            state = "" if d["file"] not in have else "  ·  **ya puesta** (se puede reemplazar)"
+            L += [
+                f"## `{d['file']}` — {d['t_es']}", "",
+                f"- **Proporción:** {d['ar'].replace('/', ':')}",
+                f"- **Página:** {PLATE_PAGE.get(k, '—')}",
+                f"- **Guardar en:** `assets/img/generated/{d['file']}`{state}",
+                "", "```text", d["prompt"], "```", "",
+            ]
+    (ROOT / "assets" / "img" / "PROMPTS.md").write_text("\n".join(L), encoding="utf-8")
 
 
 if __name__ == "__main__":
