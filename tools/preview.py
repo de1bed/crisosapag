@@ -54,7 +54,7 @@ def rewrite(html, b):
         html = re.sub(r'href="%s%s/(#[a-z0-9\-]+)?"' % (re.escape(b), re.escape(d)),
                       'href="%s"' % r, html)
     # home
-    html = html.replace('href="index.html"', 'href="#/"').replace('href="../"', 'href="#/"')
+    html = html.replace('href="./"', 'href="#/"').replace('href="../"', 'href="#/"')
     return html
 
 

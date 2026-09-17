@@ -1,0 +1,8 @@
+# Build tooling and internal docs — not part of the published site.
+tools/
+dist/
+README.md
+assets/img/PROMPTS.md
+
+# Source photographs kept for cropping; the site serves assets/img/generated/.
+assets/img/*.jpg

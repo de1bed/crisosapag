@@ -13,6 +13,7 @@ Editing copy: the generated HTML is normal readable HTML and can be edited
 directly. Keep edits in tools/parts/ if you want them to survive a rebuild.
 """
 import html
+import os
 import pathlib
 import re
 import sys
@@ -285,10 +286,15 @@ def footer(b, home):
 </footer>"""
 
 
-# Absolute base for canonical URLs, og:image and the sitemap. Change this
-# to the real domain before publishing — social previews and Google both
-# need an absolute URL and will silently do nothing with the wrong one.
-SITE = "https://www.crisosa.com"
+# Absolute base for canonical URLs, og:image and the sitemap. Social previews
+# and Google both need an absolute URL and silently do nothing with a wrong
+# one, so this has to match the domain the site is actually served from:
+#
+#     SITE_URL=https://crisosapag.vercel.app python3 tools/build.py
+#
+# On Vercel, set SITE_URL as an Environment Variable and it applies on every
+# deploy. The default below is the intended final domain.
+SITE = os.environ.get("SITE_URL", "https://www.crisosa.com").rstrip("/")
 
 
 def build():
@@ -296,7 +302,7 @@ def build():
     for p in PAGES:
         slug, d = p[0], p[1]
         b = "" if d == "" else "../"
-        home = "index.html" if d == "" else "../"
+        home = "./" if d == "" else "../"
         canonical = f"{SITE}/" + (f"{d}/" if d else "")
         body = expand((PARTS / f"{slug}.html").read_text(encoding="utf-8"), b, p[2])
         body = body.replace("{b}", b).replace("{home}", home).replace("{wa}", WHATSAPP)

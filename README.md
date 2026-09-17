@@ -178,6 +178,40 @@ Para mandárselo a alguien sin publicarlo: `python3 tools/preview.py` genera
 
 ---
 
+## Publicar en Vercel
+
+El sitio es HTML estático: **no hay build**. Vercel sólo tiene que servir la raíz
+del repositorio.
+
+1. En [vercel.com](https://vercel.com) → **Add New → Project** → importa
+   `de1bed/crisosapag`.
+2. Framework Preset: **Other**. Build Command y Output Directory se quedan como
+   están — `vercel.json` ya los fija (`outputDirectory: "."`, sin build).
+3. **Production Branch:** elige la rama desde la que quieres publicar.
+4. Deploy.
+
+`vercel.json` ya resuelve lo que un sitio de carpetas necesita: `trailingSlash`
+para que `/servicios` lleve a `/servicios/`, `404.html` como página de error, y
+cacheo largo sólo para las tipografías —el resto revalida, así que reemplazar una
+imagen se ve al recargar y no dentro de un año—. `.vercelignore` deja fuera
+`tools/`, `dist/` y las fotos fuente: no son parte del sitio publicado.
+
+### El dominio
+
+`canonical`, `og:image` y `sitemap.xml` necesitan la URL absoluta real. Vive en
+una sola variable:
+
+```bash
+SITE_URL=https://tudominio.com python3 tools/build.py
+```
+
+En Vercel se puede dejar fija: **Settings → Environment Variables → `SITE_URL`**.
+Sin ella, el valor por defecto es `https://www.crisosa.com`. Si el dominio final
+es otro, cámbialo antes de que Google indexe: una `canonical` equivocada manda el
+tráfico a una dirección que no existe.
+
+---
+
 ## Pendientes antes de publicar
 
 - [ ] **Las imágenes.** Ver `assets/img/PROMPTS.md`: separa las que se generan con
