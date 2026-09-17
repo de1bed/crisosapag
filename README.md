@@ -187,8 +187,15 @@ del repositorio.
    `de1bed/crisosapag`.
 2. Framework Preset: **Other**. Build Command y Output Directory se quedan como
    están — `vercel.json` ya los fija (`outputDirectory: "."`, sin build).
-3. **Production Branch:** elige la rama desde la que quieres publicar.
+3. **Production Branch:** `main`.
 4. Deploy.
+
+> **La trampa:** Vercel copia la rama de producción **en el momento de importar**
+> el proyecto y no la vuelve a leer. Si la rama por defecto del repo cambia
+> después, Vercel sigue publicando la vieja — y el sitio en línea no se mueve por
+> más commits que subas. Se corrige en
+> **Settings → Environments → Production → Branch Tracking**, y hace falta un
+> push nuevo para que reconstruya: cambiar el ajuste no republica solo.
 
 `vercel.json` ya resuelve lo que un sitio de carpetas necesita: `trailingSlash`
 para que `/servicios` lleve a `/servicios/`, `404.html` como página de error, y
