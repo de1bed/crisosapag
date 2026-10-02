@@ -8,9 +8,8 @@
 (function () {
   'use strict';
 
-  /* Inbox that receives the contact form. Change to the address
-     CRISOSA wants to publish (e.g. ventas@crisosa.com). */
-  var CONTACT_EMAIL = 'info@crisosa.com';
+  /* Inboxes that receive the contact form. */
+  var CONTACT_EMAIL = 'srobledo@crisosa.com,mluna@crisosa.com,fvalenzuela@crisosa.com';
 
   var $  = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };

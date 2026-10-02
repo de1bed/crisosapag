@@ -495,18 +495,19 @@ body.is-locked{overflow:hidden}
 .contacts a:hover{color:var(--blue)}
 .on-dark .contacts a:hover{color:var(--on-dark-2)}
 
-/* floating WhatsApp — the channel this market actually answers on */
-.wa{
+/* floating call button */
+.call{
   position:fixed;right:clamp(1rem,3vw,1.8rem);bottom:clamp(1rem,3vw,1.8rem);z-index:100;
   display:flex;align-items:center;gap:.55rem;
-  background:#1FAE54;color:#fff;border-radius:999px;
+  background:var(--navy);color:#fff;border-radius:999px;
   padding:.72rem 1.15rem;font-size:.84rem;font-weight:600;
-  box-shadow:0 12px 34px -12px rgba(31,174,84,.7);
-  transition:transform .28s var(--ease),box-shadow .28s var(--ease);
+  box-shadow:0 12px 34px -12px rgba(10,53,127,.65);
+  transition:transform .28s var(--ease),box-shadow .28s var(--ease),background .22s var(--ease);
 }
-.wa:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(31,174,84,.8)}
-.wa svg{width:19px;height:19px;flex:none;fill:currentColor}
-@media(max-width:520px){.wa span{display:none}.wa{padding:.85rem}}
+.call:hover{transform:translateY(-2px);background:var(--blue);box-shadow:0 16px 40px -12px rgba(15,98,180,.75)}
+.call svg{width:18px;height:18px;flex:none;fill:currentColor}
+@media(max-width:520px){.call span{display:none}.call{padding:.85rem}}
+.contacts__stack{display:grid;gap:.35rem}
 
 /* ── 17. Footer ─────────────────────────────────────────────────── */
 .ftr{background:var(--ink);color:var(--on-dark-3);padding:clamp(3rem,6vw,4.4rem) 0 0}

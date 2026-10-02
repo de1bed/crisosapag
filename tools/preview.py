@@ -64,8 +64,8 @@ def build():
     head = re.search(r'<header class="hdr".*?</header>', home, re.S).group(0)
     mega = re.search(r'<div class="mega".*?\n</div>', home, re.S).group(0)
     foot = re.search(r'<footer class="ftr".*?</footer>', home, re.S).group(0)
-    wa = re.search(r'<a class="wa".*?</a>', home, re.S).group(0)
-    head, mega, foot, wa = (rewrite(x, "") for x in (head, mega, foot, wa))
+    call = re.search(r'<a class="call".*?</a>', home, re.S).group(0)
+    head, mega, foot, call = (rewrite(x, "") for x in (head, mega, foot, call))
 
     # ── every route's <main> ────────────────────────────────────────
     routes, titles = {}, {}
@@ -99,7 +99,7 @@ def build():
 
 {foot}
 
-{wa}
+{call}
 
 <script>
 {js}
