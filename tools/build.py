@@ -23,7 +23,7 @@ PARTS = ROOT / "tools" / "parts"
 sys.path.insert(0, str(ROOT / "tools"))
 from plates import PLATES  # noqa: E402
 
-WHATSAPP = "526646072000"
+WHATSAPP = "526646072531"
 
 # slug, directory, ES name, EN name
 PAGES = [
@@ -190,7 +190,7 @@ LD = """<script type="application/ld+json">
   "description": "Importación, exportación, almacenaje y shelter en la frontera México–Estados Unidos. Empresa certificada IVA/IEPS AAA, CTPAT e IMMEX.",
   "address": { "@type": "PostalAddress", "addressLocality": "Tijuana", "addressRegion": "Baja California", "addressCountry": "MX" },
   "contactPoint": [
-    { "@type": "ContactPoint", "telephone": "+52-664-607-2000", "contactType": "sales", "areaServed": "MX", "availableLanguage": ["es","en"] },
+    { "@type": "ContactPoint", "telephone": "+52-664-607-2531", "contactType": "sales", "areaServed": "MX", "availableLanguage": ["es","en"] },
     { "@type": "ContactPoint", "telephone": "+1-619-270-2229", "contactType": "sales", "areaServed": "US", "availableLanguage": ["en","es"] }
   ],
   "email": "info@crisosa.com",
@@ -237,7 +237,7 @@ def mega(b, home):
 {rows}
     </nav>
     <div class="mega__foot">
-      <a href="tel:+526646072000">+52 (664) 607-20-00</a>
+      <a href="tel:+526646072531">+52 (664) 607-25-31</a>
       <a href="tel:+16192702229">+1 (619) 270-22-29</a>
       <a href="mailto:info@crisosa.com">info@crisosa.com</a>
       <span>Tijuana, Baja California, México</span>
@@ -271,7 +271,7 @@ def footer(b, home):
       <div>
         <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
         <ul>
-          <li><a href="tel:+526646072000">MX +52 (664) 607-20-00</a></li>
+          <li><a href="tel:+526646072531">MX +52 (664) 607-25-31</a></li>
           <li><a href="tel:+16192702229">US +1 (619) 270-22-29</a></li>
           <li><a href="mailto:info@crisosa.com">info@crisosa.com</a></li>
           <li><a href="https://wa.me/{WHATSAPP}" target="_blank" rel="noopener">WhatsApp</a></li>

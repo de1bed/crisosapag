@@ -1,6 +1,6 @@
 # Imágenes del sitio
 
-El sitio tiene **21 espacios de imagen**. Hoy faltan **13**.
+El sitio tiene **18 espacios de imagen**. Hoy faltan **0**.
 
 Mientras un archivo no exista, su pantalla conserva la composición sobre un
 degradado y muestra abajo una línea con el nombre del archivo y un botón
@@ -10,11 +10,11 @@ toma sola, sin tocar código.
 
 Hay dos tipos de espacio y no se resuelven igual:
 
-- **9 para generar** con un modelo de imagen. El prompt va en inglés a
+- **11 para generar** con un modelo de imagen. El prompt va en inglés a
   propósito: los modelos siguen mejor un brief en inglés. Todos terminan con la
   misma dirección fotográfica para que parezcan una sola sesión, y todos piden
   **espacio vacío en el tercio superior**, que es donde va el titular.
-- **12 para fotografiar de verdad.** Son la gente y los activos de
+- **7 para fotografiar de verdad.** Son la gente y los activos de
   CRISOSA; ninguna imagen generada los sustituye. El texto es la guía de toma.
 
 > Los diagramas del sitio —planta y corte de la nave, las naves a escala y el
@@ -24,26 +24,23 @@ Hay dos tipos de espacio y no se resuelven igual:
 | # | Archivo | Proporción | Página | Tipo | Estado |
 |---|---|---|---|---|---|
 | 1 | `home-hero.jpg` | 16:9 | Inicio | Generar | ✅ puesta |
-| 2 | `home-certs.jpg` | 16:9 | Inicio | Generar | ⬜ falta |
+| 2 | `home-certs.jpg` | 16:9 | Inicio | Generar | ✅ puesta |
 | 3 | `home-why.jpg` | 16:9 | Inicio | Generar | ✅ puesta |
-| 4 | `home-facility.jpg` | 21:9 | Inicio | Fotografiar | ⬜ falta |
-| 5 | `svc-hero.jpg` | 16:9 | Servicios | Generar | ✅ puesta |
-| 6 | `svc-import.jpg` | 3:4 | Inicio | Generar | ✅ puesta |
-| 7 | `svc-storage.jpg` | 3:4 | Inicio | Generar | ✅ puesta |
-| 8 | `svc-shelter.jpg` | 3:4 | Inicio | Generar | ⬜ falta |
-| 9 | `cert-hero.jpg` | 16:9 | Certificaciones | Generar | ⬜ falta |
-| 10 | `cli-hero.jpg` | 16:9 | Clientes | Fotografiar | ⬜ falta |
-| 11 | `fac-hero.jpg` | 21:9 | Instalaciones | Fotografiar | ⬜ falta |
-| 12 | `fac-docks.jpg` | 16:9 | Instalaciones | Generar | ✅ puesta |
-| 13 | `fac-security.jpg` | 16:9 | Instalaciones | Fotografiar | ⬜ falta |
-| 14 | `abt-hero.jpg` | 16:9 | Nosotros | Fotografiar | ⬜ falta |
-| 15 | `abt-truck.jpg` | 3:2 | Nosotros | Fotografiar | ✅ puesta |
-| 16 | `abt-team.jpg` | 3:2 | Nosotros | Fotografiar | ✅ puesta |
-| 17 | `lead-1.jpg` | 4:5 | Nosotros | Fotografiar | ⬜ falta |
-| 18 | `lead-2.jpg` | 4:5 | Nosotros | Fotografiar | ⬜ falta |
-| 19 | `lead-3.jpg` | 4:5 | Nosotros | Fotografiar | ⬜ falta |
-| 20 | `lead-4.jpg` | 4:5 | Nosotros | Fotografiar | ⬜ falta |
-| 21 | `lead-5.jpg` | 4:5 | Nosotros | Fotografiar | ⬜ falta |
+| 4 | `home-facility.jpg` | 21:9 | Inicio | Fotografiar | ✅ puesta |
+| 5 | `home-cta.jpg` | 16:9 | Inicio | Generar | ✅ puesta |
+| 6 | `svc-hero.jpg` | 16:9 | Servicios | Generar | ✅ puesta |
+| 7 | `svc-import.jpg` | 3:4 | Inicio | Generar | ✅ puesta |
+| 8 | `svc-storage.jpg` | 3:4 | Inicio | Generar | ✅ puesta |
+| 9 | `svc-shelter.jpg` | 3:4 | Inicio | Generar | ✅ puesta |
+| 10 | `svc-cta.jpg` | 16:9 | Servicios | Generar | ✅ puesta |
+| 11 | `cert-hero.jpg` | 16:9 | Certificaciones | Generar | ✅ puesta |
+| 12 | `cli-hero.jpg` | 16:9 | Clientes | Fotografiar | ✅ puesta |
+| 13 | `fac-hero.jpg` | 21:9 | Instalaciones | Fotografiar | ✅ puesta |
+| 14 | `fac-docks.jpg` | 16:9 | Instalaciones | Generar | ✅ puesta |
+| 15 | `fac-security.jpg` | 16:9 | Instalaciones | Fotografiar | ✅ puesta |
+| 16 | `abt-hero.jpg` | 16:9 | Nosotros | Fotografiar | ✅ puesta |
+| 17 | `abt-truck.jpg` | 3:2 | Nosotros | Fotografiar | ✅ puesta |
+| 18 | `abt-team.jpg` | 3:2 | Nosotros | Fotografiar | ✅ puesta |
 
 ---
 
@@ -65,7 +62,7 @@ Aerial photograph at blue hour of a large logistics complex in Tijuana, Baja Cal
 
 - **Proporción:** 16:9
 - **Página:** Inicio
-- **Guardar en:** `assets/img/generated/home-certs.jpg`
+- **Guardar en:** `assets/img/generated/home-certs.jpg`  ·  **ya puesta** (se puede reemplazar)
 
 ```text
 Night photograph of a single white dry-van trailer backed into a warehouse loading dock, lit from inside the building so light spills out around the trailer doors. A closed security seal is visible on the door latch. Wet concrete apron reflecting the dock lights, the rest of the frame falling into darkness. The mood is controlled and serious, like a secure facility at 3 a.m. Cinematic documentary photograph, wide angle around 24mm on a full-frame camera, natural light, restrained cool colour grade with deep clean shadows and controlled highlights, calm and premium, nothing cluttered. No text, no watermarks, no third-party brand logos, no lens flare, no one looking at the camera, no heavy HDR. Photorealistic. Compose with generous empty space across the upper third so a headline can sit over it.
@@ -79,6 +76,16 @@ Night photograph of a single white dry-van trailer backed into a warehouse loadi
 
 ```text
 Wide interior photograph of a very large modern distribution warehouse, looking straight down a long central aisle that converges toward a bright far wall. Tall blue selective racking on both sides, wrapped pallets stacked evenly on every level, a spotless sealed concrete floor with crisp painted aisle lines, even LED high-bay lighting. Almost empty of people. The feeling is precision and scale. Cinematic documentary photograph, wide angle around 24mm on a full-frame camera, natural light, restrained cool colour grade with deep clean shadows and controlled highlights, calm and premium, nothing cluttered. No text, no watermarks, no third-party brand logos, no lens flare, no one looking at the camera, no heavy HDR. Photorealistic. Compose with generous empty space across the upper third so a headline can sit over it.
+```
+
+## `home-cta.jpg` — Contacto — unidad saliendo al anochecer
+
+- **Proporción:** 16:9
+- **Página:** Inicio
+- **Guardar en:** `assets/img/generated/home-cta.jpg`  ·  **ya puesta** (se puede reemplazar)
+
+```text
+Blue-hour photograph of an unbranded white dry-van truck departing a modern warehouse yard, seen from a distant three-quarter rear angle. Soft dock lights and parked trailers in the background, with the activity kept low in the frame and generous dark negative space through the centre for a headline. Calm, dependable and ready to move. Cinematic documentary photograph, wide angle around 24mm on a full-frame camera, natural light, restrained cool colour grade with deep clean shadows and controlled highlights, calm and premium, nothing cluttered. No text, no watermarks, no third-party brand logos, no lens flare, no one looking at the camera, no heavy HDR. Photorealistic. Compose with generous empty space across the upper third so a headline can sit over it.
 ```
 
 ## `svc-hero.jpg` — Servicios — cruce comercial
@@ -115,17 +122,27 @@ Vertical photograph inside a warehouse, looking straight up a tall run of blue s
 
 - **Proporción:** 3:4
 - **Página:** Inicio
-- **Guardar en:** `assets/img/generated/svc-shelter.jpg`
+- **Guardar en:** `assets/img/generated/svc-shelter.jpg`  ·  **ya puesta** (se puede reemplazar)
 
 ```text
 Vertical photograph of a clean light-assembly production floor in a Mexican plant, looking down a row of workbenches with anti-static mats, component bins and task lighting. Two operators in blue smocks and safety glasses at work, seen in profile and slightly out of focus, painted floor lanes leading away. Bright, modern, organised. Portrait orientation, three by four. Cinematic documentary photograph, wide angle around 24mm on a full-frame camera, natural light, restrained cool colour grade with deep clean shadows and controlled highlights, calm and premium, nothing cluttered. No text, no watermarks, no third-party brand logos, no lens flare, no one looking at the camera, no heavy HDR. Photorealistic. Compose with generous empty space across the upper third so a headline can sit over it.
+```
+
+## `svc-cta.jpg` — Servicios — preparación de embarque
+
+- **Proporción:** 16:9
+- **Página:** Servicios
+- **Guardar en:** `assets/img/generated/svc-cta.jpg`  ·  **ya puesta** (se puede reemplazar)
+
+```text
+Wide photograph inside a modern warehouse during final outbound preparation. One unbranded forklift in the middle distance approaches a neat row of wrapped pallets near softly lit loading docks. Floor markings lead toward the docks, while the centre and upper third remain dark and uncluttered for a headline. Cinematic documentary photograph, wide angle around 24mm on a full-frame camera, natural light, restrained cool colour grade with deep clean shadows and controlled highlights, calm and premium, nothing cluttered. No text, no watermarks, no third-party brand logos, no lens flare, no one looking at the camera, no heavy HDR. Photorealistic. Compose with generous empty space across the upper third so a headline can sit over it.
 ```
 
 ## `cert-hero.jpg` — Certificaciones — sello de seguridad
 
 - **Proporción:** 16:9
 - **Página:** Certificaciones
-- **Guardar en:** `assets/img/generated/cert-hero.jpg`
+- **Guardar en:** `assets/img/generated/cert-hero.jpg`  ·  **ya puesta** (se puede reemplazar)
 
 ```text
 Close photograph of a gloved hand fitting a numbered bolt security seal to the latch of a trailer door, shot with a shallow depth of field so the seal is sharp and the ribbed trailer door falls softly out of focus behind. Cool daylight, restrained colour, the seal unbranded and unnumbered. Precision and care. Cinematic documentary photograph, wide angle around 24mm on a full-frame camera, natural light, restrained cool colour grade with deep clean shadows and controlled highlights, calm and premium, nothing cluttered. No text, no watermarks, no third-party brand logos, no lens flare, no one looking at the camera, no heavy HDR. Photorealistic. Compose with generous empty space across the upper third so a headline can sit over it.
@@ -151,7 +168,7 @@ Estas no se generan: son personas y activos reales de CRISOSA.
 
 - **Proporción:** 21:9
 - **Página:** Inicio
-- **Guardar en:** `assets/img/generated/home-facility.jpg`
+- **Guardar en:** `assets/img/generated/home-facility.jpg`  ·  **ya puesta** (se puede reemplazar)
 
 ```text
 Fotografía del patio de maniobras a ras de suelo, a última hora de la tarde, mirando a lo largo del patio para que las sombras vengan hacia la cámara. Que entre una unidad maniobrando entre dos filas de cajas estacionadas. Cámara baja, a la altura del pecho, gran angular. Encuadre 21:9 con espacio de cielo arriba. Sin gente posando y sin coches particulares en cuadro.
@@ -161,7 +178,7 @@ Fotografía del patio de maniobras a ras de suelo, a última hora de la tarde, m
 
 - **Proporción:** 16:9
 - **Página:** Clientes
-- **Guardar en:** `assets/img/generated/cli-hero.jpg`
+- **Guardar en:** `assets/img/generated/cli-hero.jpg`  ·  **ya puesta** (se puede reemplazar)
 
 ```text
 Fotografía dentro de la nave, cerca de los andenes de salida: una fila larga de tarimas emplayadas y etiquetadas, alineadas en el piso esperando carga, con los portones abiertos al fondo dejando entrar luz de día. Cámara a la altura del pecho, mirando a lo largo de la fila para que se vea la perspectiva. Etiquetas ilegibles a esa distancia. Piso barrido. Encuadre 16:9.
@@ -171,7 +188,7 @@ Fotografía dentro de la nave, cerca de los andenes de salida: una fila larga de
 
 - **Proporción:** 21:9
 - **Página:** Instalaciones
-- **Guardar en:** `assets/img/generated/fac-hero.jpg`
+- **Guardar en:** `assets/img/generated/fac-hero.jpg`  ·  **ya puesta** (se puede reemplazar)
 
 ```text
 Fotografía aérea del conjunto, con dron, a unos 120–150 metros y en ángulo inclinado (no cenital), de modo que se vean los techos, el patio de maniobras y las cajas estacionadas en fila. Volar a última hora de la tarde, con el sol bajo: las sombras largas son lo que da volumen al conjunto. Encuadre horizontal muy panorámico (21:9) con el edificio en el tercio inferior y cielo limpio arriba, que es donde va el titular. Patio despejado y ordenado antes de volar.
@@ -181,7 +198,7 @@ Fotografía aérea del conjunto, con dron, a unos 120–150 metros y en ángulo 
 
 - **Proporción:** 16:9
 - **Página:** Instalaciones
-- **Guardar en:** `assets/img/generated/fac-security.jpg`
+- **Guardar en:** `assets/img/generated/fac-security.jpg`  ·  **ya puesta** (se puede reemplazar)
 
 ```text
 Fotografía del acceso vehicular al anochecer: la caseta de vigilancia encendida, la pluma abajo, la barda perimetral alejándose de la cámara y el patio al fondo en penumbra con luz cálida. Tomar en el momento en que todavía hay algo de azul en el cielo. Que no se lea ningún letrero ni placa. La idea es que se vea controlado y tranquilo, no intimidante. Encuadre 16:9.
@@ -191,7 +208,7 @@ Fotografía del acceso vehicular al anochecer: la caseta de vigilancia encendida
 
 - **Proporción:** 16:9
 - **Página:** Nosotros
-- **Guardar en:** `assets/img/generated/abt-hero.jpg`
+- **Guardar en:** `assets/img/generated/abt-hero.jpg`  ·  **ya puesta** (se puede reemplazar)
 
 ```text
 Fotografía exterior de la nave a primera hora de la mañana, desde el otro lado del patio vacío: la fachada recibiendo el primer sol cálido mientras el cielo todavía está azul frío. Una sola caja en andén, nadie en cuadro, sombras largas y quietas. Encuadre 16:9, amplio, casi de naturaleza muerta. Es el retrato del edificio, no una foto de operación.
@@ -215,54 +232,4 @@ Photograph one of the CRISOSA box trucks, three-quarter front view, with the dol
 
 ```text
 Group photograph of a logistics company team of about twelve people standing informally in front of an open warehouse dock door in Tijuana, Mexico. Mixed ages, business-casual clothing and hi-vis vests, relaxed natural posture and easy expressions, warm late-afternoon side light, the blue steel structure of the building behind them. Authentic and unposed rather than corporate stock. Cinematic documentary photograph, wide angle around 24mm on a full-frame camera, natural light, restrained cool colour grade with deep clean shadows and controlled highlights, calm and premium, nothing cluttered. No text, no watermarks, no third-party brand logos, no lens flare, no one looking at the camera, no heavy HDR. Photorealistic. Compose with generous empty space across the upper third so a headline can sit over it.
-```
-
-## `lead-1.jpg` — Retrato — Dirección General
-
-- **Proporción:** 4:5
-- **Página:** Nosotros
-- **Guardar en:** `assets/img/generated/lead-1.jpg`
-
-```text
-Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.
-```
-
-## `lead-2.jpg` — Retrato — Dirección de Operaciones
-
-- **Proporción:** 4:5
-- **Página:** Nosotros
-- **Guardar en:** `assets/img/generated/lead-2.jpg`
-
-```text
-Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.
-```
-
-## `lead-3.jpg` — Retrato — Comercio Exterior
-
-- **Proporción:** 4:5
-- **Página:** Nosotros
-- **Guardar en:** `assets/img/generated/lead-3.jpg`
-
-```text
-Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.
-```
-
-## `lead-4.jpg` — Retrato — Almacén y Distribución
-
-- **Proporción:** 4:5
-- **Página:** Nosotros
-- **Guardar en:** `assets/img/generated/lead-4.jpg`
-
-```text
-Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.
-```
-
-## `lead-5.jpg` — Retrato — Atención a Clientes
-
-- **Proporción:** 4:5
-- **Página:** Nosotros
-- **Guardar en:** `assets/img/generated/lead-5.jpg`
-
-```text
-Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.
 ```

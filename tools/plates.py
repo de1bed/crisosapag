@@ -75,6 +75,16 @@ PLATES = {
   t_en="Facilities — the maneuvering yard",
   prompt='Fotografía del patio de maniobras a ras de suelo, a última hora de la tarde, mirando a lo largo del patio para que las sombras vengan hacia la cámara. Que entre una unidad maniobrando entre dos filas de cajas estacionadas. Cámara baja, a la altura del pecho, gran angular. Encuadre 21:9 con espacio de cielo arriba. Sin gente posando y sin coches particulares en cuadro.'),
 
+"home-cta": dict(
+  file="home-cta.jpg", ar="16/9",
+  t_es="Contacto — unidad saliendo al anochecer",
+  t_en="Contact — truck departing at dusk",
+  prompt=(
+    "Blue-hour photograph of an unbranded white dry-van truck departing a modern warehouse "
+    "yard, seen from a distant three-quarter rear angle. Soft dock lights and parked trailers "
+    "in the background, with the activity kept low in the frame and generous dark negative "
+    "space through the centre for a headline. Calm, dependable and ready to move. " + LOOK)),
+
 # ══ SERVICIOS ═════════════════════════════════════════════════════
 "svc-hero": dict(
   file="svc-hero.jpg", ar="16/9",
@@ -116,6 +126,16 @@ PLATES = {
     "Two operators in blue smocks and safety glasses at work, seen in profile and slightly out "
     "of focus, painted floor lanes leading away. Bright, modern, organised. "
     "Portrait orientation, three by four. " + LOOK)),
+
+"svc-cta": dict(
+  file="svc-cta.jpg", ar="16/9",
+  t_es="Servicios — preparación de embarque",
+  t_en="Services — outbound shipment preparation",
+  prompt=(
+    "Wide photograph inside a modern warehouse during final outbound preparation. One "
+    "unbranded forklift in the middle distance approaches a neat row of wrapped pallets near "
+    "softly lit loading docks. Floor markings lead toward the docks, while the centre and upper "
+    "third remain dark and uncluttered for a headline. " + LOOK)),
 
 # ══ CERTIFICACIONES ═══════════════════════════════════════════════
 "cert-hero": dict(
@@ -187,35 +207,4 @@ PLATES = {
     "clothing and hi-vis vests, relaxed natural posture and easy expressions, "
     "warm late-afternoon side light, the blue steel structure of the building behind them. "
     "Authentic and unposed rather than corporate stock. " + LOOK)),
-
-# ══ NOSOTROS — retratos de líderes de área ════════════════════════
-"lead-1": dict(
-  file="lead-1.jpg", ar="4/5", kind="foto",
-  t_es="Retrato — Dirección General",
-  t_en="Portrait — General Management",
-  prompt='Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.'),
-
-"lead-2": dict(
-  file="lead-2.jpg", ar="4/5", kind="foto",
-  t_es="Retrato — Dirección de Operaciones",
-  t_en="Portrait — Operations",
-  prompt='Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.'),
-
-"lead-3": dict(
-  file="lead-3.jpg", ar="4/5", kind="foto",
-  t_es="Retrato — Comercio Exterior",
-  t_en="Portrait — Foreign Trade",
-  prompt='Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.'),
-
-"lead-4": dict(
-  file="lead-4.jpg", ar="4/5", kind="foto",
-  t_es="Retrato — Almacén y Distribución",
-  t_en="Portrait — Warehousing & Distribution",
-  prompt='Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.'),
-
-"lead-5": dict(
-  file="lead-5.jpg", ar="4/5", kind="foto",
-  t_es="Retrato — Atención a Clientes",
-  t_en="Portrait — Customer Service",
-  prompt='Retrato de medio cuerpo, vertical, proporción 4:5. Fondo liso y neutro —una pared clara de la oficina o de la nave, sin objetos detrás— o el racking desenfocado a un par de metros. Luz natural de una ventana lateral, nunca flash directo ni luz de techo encima. La persona de frente o en tres cuartos, con la mirada a la cámara, expresión relajada, hombros dentro del encuadre y espacio libre arriba de la cabeza. Vestimenta de trabajo real: camisa de la empresa, chaleco o bata según el área. Cámara a la altura de los ojos, a metro y medio. Todos los retratos con el mismo fondo, la misma luz y el mismo encuadre: es lo que hace que la fila se vea como un equipo y no como cinco fotos sueltas.'),
 }

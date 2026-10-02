@@ -47,15 +47,54 @@
     <div class="stack reveal">
       <p class="eyebrow" data-es="Sectores" data-en="Sectors">Sectores</p>
       <h2 data-es="Industrias distintas, una infraestructura" data-en="Different industries, one infrastructure">Industrias distintas, una infraestructura</h2>
+      <p class="lede" data-es="La misma operación, calibrada a lo que cada carga exige."
+         data-en="The same operation, tuned to what each freight demands.">
+        La misma operación, calibrada a lo que cada carga exige.</p>
     </div>
-    <div class="figs reveal" data-d="1" style="gap:clamp(1.4rem,3vw,2.4rem)">
-      <div class="fig"><b style="font-size:clamp(1.2rem,2.4vw,1.6rem);font-weight:500" data-es="Electrónica" data-en="Electronics">Electrónica</b><span data-es="Volumen alto, manejo cuidadoso" data-en="High volume, careful handling">Volumen alto, manejo cuidadoso</span></div>
-      <div class="fig"><b style="font-size:clamp(1.2rem,2.4vw,1.6rem);font-weight:500" data-es="Dispositivos médicos" data-en="Medical devices">Dispositivos médicos</b><span data-es="Trazabilidad y control regulatorio" data-en="Traceability and regulatory control">Trazabilidad y control regulatorio</span></div>
-      <div class="fig"><b style="font-size:clamp(1.2rem,2.4vw,1.6rem);font-weight:500" data-es="Textil" data-en="Textiles">Textil</b><span data-es="Muchos SKU, temporadas marcadas" data-en="Many SKUs, sharp seasons">Muchos SKU, temporadas marcadas</span></div>
-      <div class="fig"><b style="font-size:clamp(1.2rem,2.4vw,1.6rem);font-weight:500" data-es="Mobiliario" data-en="Furniture">Mobiliario</b><span data-es="Carga voluminosa, almacenaje en piso" data-en="Bulky freight, floor storage">Carga voluminosa, almacenaje en piso</span></div>
-      <div class="fig"><b style="font-size:clamp(1.2rem,2.4vw,1.6rem);font-weight:500" data-es="Metales" data-en="Metals">Metales</b><span data-es="Peso y manejo especializado" data-en="Weight and specialized handling">Peso y manejo especializado</span></div>
-      <div class="fig"><b style="font-size:clamp(1.2rem,2.4vw,1.6rem);font-weight:500" data-es="Consumo" data-en="Consumer goods">Consumo</b><span data-es="Surtido de pedidos y comercio electrónico" data-en="Order fulfillment and e-commerce">Surtido de pedidos y comercio electrónico</span></div>
-    </div>
+    <ul class="sectors reveal" data-d="1">
+      <li class="sector">
+        <span class="sector__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3"/></svg>
+        </span>
+        <b data-es="Electrónica" data-en="Electronics">Electrónica</b>
+        <span data-es="Volumen alto, manejo cuidadoso" data-en="High volume, careful handling">Volumen alto, manejo cuidadoso</span>
+      </li>
+      <li class="sector">
+        <span class="sector__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12h3.2l1.6-3.5 2.4 7 1.8-3.5H19.5"/><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/></svg>
+        </span>
+        <b data-es="Dispositivos médicos" data-en="Medical devices">Dispositivos médicos</b>
+        <span data-es="Trazabilidad y control regulatorio" data-en="Traceability and regulatory control">Trazabilidad y control regulatorio</span>
+      </li>
+      <li class="sector">
+        <span class="sector__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6.5c3.2 0 4.8 2.2 7 2.2S15.8 6.5 19 6.5"/><path d="M5 12c3.2 0 4.8 2.2 7 2.2S15.8 12 19 12"/><path d="M5 17.5c3.2 0 4.8 2.2 7 2.2s3.8-2.2 7-2.2"/></svg>
+        </span>
+        <b data-es="Textil" data-en="Textiles">Textil</b>
+        <span data-es="Muchos SKU, temporadas marcadas" data-en="Many SKUs, sharp seasons">Muchos SKU, temporadas marcadas</span>
+      </li>
+      <li class="sector">
+        <span class="sector__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 19V9.5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1V19"/><path d="M6.5 19h11"/><path d="M9.5 8.5V6.8A1.8 1.8 0 0 1 11.3 5h1.4A1.8 1.8 0 0 1 14.5 6.8v1.7"/><path d="M8 13h8"/></svg>
+        </span>
+        <b data-es="Mobiliario" data-en="Furniture">Mobiliario</b>
+        <span data-es="Carga voluminosa, almacenaje en piso" data-en="Bulky freight, floor storage">Carga voluminosa, almacenaje en piso</span>
+      </li>
+      <li class="sector">
+        <span class="sector__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16.5 8.5 8h7L20 16.5"/><path d="M6.2 16.5h11.6"/><path d="M8.5 12.5h7"/><path d="M10 8v-2.5h4V8"/></svg>
+        </span>
+        <b data-es="Metales" data-en="Metals">Metales</b>
+        <span data-es="Peso y manejo especializado" data-en="Weight and specialized handling">Peso y manejo especializado</span>
+      </li>
+      <li class="sector">
+        <span class="sector__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 9.5 12 5l7.5 4.5v9L12 23l-7.5-4.5v-9z"/><path d="M12 5v18"/><path d="M4.5 9.5 12 14l7.5-4.5"/></svg>
+        </span>
+        <b data-es="Consumo" data-en="Consumer goods">Consumo</b>
+        <span data-es="Surtido de pedidos y comercio electrónico" data-en="Order fulfillment and e-commerce">Surtido de pedidos y comercio electrónico</span>
+      </li>
+    </ul>
     <div class="pills reveal" data-d="2">
       <a class="pill pill--solid" href="{b}contacto/" data-es="Hablar de mi sector" data-en="Talk about my sector">Hablar de mi sector</a>
     </div>
