@@ -24,12 +24,6 @@ sys.path.insert(0, str(ROOT / "tools"))
 from plates import PLATES  # noqa: E402
 
 PHONE = "526646072531"
-EMAILS = (
-    "srobledo@crisosa.com",
-    "mluna@crisosa.com",
-    "fvalenzuela@crisosa.com",
-)
-MAILTO = ",".join(EMAILS)
 
 # slug, directory, ES name, EN name
 PAGES = [
@@ -199,7 +193,6 @@ LD = """<script type="application/ld+json">
     { "@type": "ContactPoint", "telephone": "+52-664-607-2531", "contactType": "sales", "areaServed": "MX", "availableLanguage": ["es","en"] },
     { "@type": "ContactPoint", "telephone": "+1-619-270-2229", "contactType": "sales", "areaServed": "US", "availableLanguage": ["en","es"] }
   ],
-  "email": ["srobledo@crisosa.com", "mluna@crisosa.com", "fvalenzuela@crisosa.com"],
   "hasCredential": ["IMMEX", "IVA/IEPS AAA", "CTPAT"]
 }
 </script>"""
@@ -245,9 +238,6 @@ def mega(b, home):
     <div class="mega__foot">
       <a href="tel:+526646072531">+52 (664) 607-25-31</a>
       <a href="tel:+16192702229">+1 (619) 270-22-29</a>
-      <a href="mailto:srobledo@crisosa.com">srobledo@crisosa.com</a>
-      <a href="mailto:mluna@crisosa.com">mluna@crisosa.com</a>
-      <a href="mailto:fvalenzuela@crisosa.com">fvalenzuela@crisosa.com</a>
       <span>Tijuana, Baja California, México</span>
     </div>
   </div>
@@ -281,9 +271,6 @@ def footer(b, home):
         <ul>
           <li><a href="tel:+526646072531">MX +52 (664) 607-25-31</a></li>
           <li><a href="tel:+16192702229">US +1 (619) 270-22-29</a></li>
-          <li><a href="mailto:srobledo@crisosa.com">srobledo@crisosa.com</a></li>
-          <li><a href="mailto:mluna@crisosa.com">mluna@crisosa.com</a></li>
-          <li><a href="mailto:fvalenzuela@crisosa.com">fvalenzuela@crisosa.com</a></li>
         </ul>
       </div>
     </div>
@@ -314,7 +301,7 @@ def build():
         home = "./" if d == "" else "../"
         canonical = f"{SITE}/" + (f"{d}/" if d else "")
         body = expand((PARTS / f"{slug}.html").read_text(encoding="utf-8"), b, p[2])
-        body = body.replace("{b}", b).replace("{home}", home).replace("{phone}", PHONE).replace("{mailto}", MAILTO)
+        body = body.replace("{b}", b).replace("{home}", home).replace("{phone}", PHONE)
         t_es, t_en, d_es, d_en = META[slug]
         page = SHELL.format(
             b=b, phone=PHONE, site=SITE, canonical=canonical,

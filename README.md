@@ -225,10 +225,10 @@ tráfico a una dirección que no existe.
       `https://www.crisosa.com`. De ahí salen la URL canónica, el `og:image` y el
       `sitemap.xml`: **con el dominio equivocado, las vistas previas al compartir el
       enlace no funcionan.**
-- [ ] **WhatsApp.** El botón flotante apunta a `+52 664 607 2000` (`WHATSAPP` en
-      `tools/build.py`). Confirmar que ese número tiene WhatsApp Business, o cambiarlo.
-- [ ] **Correo de contacto.** El formulario abre el cliente de correo apuntando a
-      `info@crisosa.com` (`CONTACT_EMAIL` en `assets/js/main.js`). Confirmar.
+- [ ] **WhatsApp.** El botón flotante es una llamada a `+52 (664) 607-25-31`.
+      No hay enlace de WhatsApp en el sitio.
+- [ ] **Correo de contacto.** El formulario ya no abre un correo. El contacto
+      público es por los teléfonos de México y Estados Unidos.
 - [ ] **Domicilio completo.** El sitio dice sólo «Tijuana, Baja California». Falta el
       domicilio y, si se quiere, un mapa en `/contacto/`.
 - [ ] **Casos de éxito.** Los logos son presencia, no evidencia. Dos o tres casos con
@@ -238,8 +238,8 @@ tráfico a una dirección que no existe.
       página. Falta validarlo.
 - [ ] **Logo de cliente sin identificar.** `assets/logos/horse.png` aparece en la
       presentación sin nombre legible; lleva el alt genérico «Socio comercial».
-- [ ] **Formulario con backend.** El `mailto:` funciona sin servidor, pero pierde
-      contactos. Si se quiere recibirlos en una bandeja o CRM hay que conectar un
-      servicio de formularios.
+- [ ] **Formulario con backend.** El formulario valida los datos y abre la llamada
+      al teléfono de México. No envía el mensaje a ningún buzón. Si se quieren
+      recibir las solicitudes en una bandeja o CRM hay que conectar un servicio.
 - [ ] **Autorización de logos.** Confirmar que los clientes autorizan el uso de su
       marca en el sitio público.

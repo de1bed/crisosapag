@@ -483,7 +483,6 @@ body.is-locked{overflow:hidden}
 .call:hover{transform:translateY(-2px);background:var(--blue);box-shadow:0 16px 40px -12px rgba(15,98,180,.75)}
 .call svg{width:18px;height:18px;flex:none;fill:currentColor}
 @media(max-width:520px){.call span{display:none}.call{padding:.85rem}}
-.contacts__stack{display:grid;gap:.35rem}
 
 /* ── 17. Footer ─────────────────────────────────────────────────── */
 .ftr{background:var(--ink);color:var(--on-dark-3);padding:clamp(3rem,6vw,4.4rem) 0 0}

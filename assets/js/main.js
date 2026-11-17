@@ -2,14 +2,13 @@
    CRISOSA Logistic Solutions — site behaviour
    Bilingual EN/ES, index overlay, a header that reads the panel
    beneath it, photograph placeholders carrying their own prompt,
-   figure counters, scroll reveal and the mailto contact form.
+   figure counters, scroll reveal and the contact form.
    No dependencies. Every module checks for its markup before binding.
    ══════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  /* Inboxes that receive the contact form. */
-  var CONTACT_EMAIL = 'srobledo@crisosa.com,mluna@crisosa.com,fvalenzuela@crisosa.com';
+  var PHONE = '526646072531';
 
   var $  = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
@@ -201,27 +200,16 @@
       nums.forEach(function (el) { cio.observe(el); });
     }
 
-    /* ════ 7. Contact form → mailto ════════════════════════════════ */
+    /* ════ 7. Contact form → company phone ═════════════════════════
+       The form used to open a mail client addressed to personal
+       inboxes. Those addresses are gone, so a valid form places the
+       call to the company number already shown beside it. */
     var form = $('#form');
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         if (!form.reportValidity()) return;
-        var d = new FormData(form);
-        var es = document.documentElement.lang === 'es';
-        var subject = (es ? 'Solicitud de información — ' : 'Information request — ') + d.get('service');
-        var body = [
-          (es ? 'Nombre: '   : 'Name: ')    + (d.get('name')    || ''),
-          (es ? 'Empresa: '  : 'Company: ') + (d.get('company') || ''),
-          (es ? 'Correo: '   : 'Email: ')   + (d.get('email')   || ''),
-          (es ? 'Teléfono: ' : 'Phone: ')   + (d.get('phone')   || ''),
-          (es ? 'Servicio: ' : 'Service: ') + (d.get('service') || ''),
-          '',
-          d.get('message') || ''
-        ].join('\n');
-        window.location.href = 'mailto:' + CONTACT_EMAIL +
-          '?subject=' + encodeURIComponent(subject) +
-          '&body='    + encodeURIComponent(body);
+        window.location.href = 'tel:+' + PHONE;
       });
     }
 
