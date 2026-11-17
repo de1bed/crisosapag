@@ -91,10 +91,8 @@ generado desde `tools/plates.py`, y separa dos tipos de espacio:
   fotográfica para que las piezas parezcan una sola sesión, y todos piden **espacio
   vacío en el tercio superior**, que es donde cae el titular.
 - **Para fotografiar de verdad.** El conjunto, el patio, el acceso, la unidad de
-  reparto, el equipo y los retratos de los líderes de área. Son los activos y la
-  gente de CRISOSA: ninguna imagen generada los sustituye. El texto es la guía de
-  toma —encuadre, luz, fondo— para que las cinco fotos de líderes se vean como un
-  equipo y no como cinco fotos sueltas.
+  reparto y el equipo. Son los activos de CRISOSA: ninguna imagen generada los
+  sustituye. El texto es la guía de toma —encuadre, luz, fondo—.
 
 Algunos espacios ya vienen llenos con material real. Se reemplazan usando el mismo
 nombre de archivo.
@@ -223,17 +221,14 @@ tráfico a una dirección que no existe.
 
 - [ ] **Las imágenes.** Ver `assets/img/PROMPTS.md`: separa las que se generan con
       un modelo de las que hay que fotografiar en sitio.
-- [ ] **Nombres de los líderes de área.** `/nosotros/` publica cinco puestos con
-      «Nombre por confirmar». Los puestos están en `tools/parts/nosotros.html` y los
-      retratos en `tools/plates.py` (`lead-1` a `lead-5`).
 - [ ] **Dominio real.** `SITE` al final de `tools/build.py` dice
       `https://www.crisosa.com`. De ahí salen la URL canónica, el `og:image` y el
       `sitemap.xml`: **con el dominio equivocado, las vistas previas al compartir el
       enlace no funcionan.**
-- [ ] **WhatsApp.** El botón flotante apunta a `+52 664 607 2000` (`WHATSAPP` en
-      `tools/build.py`). Confirmar que ese número tiene WhatsApp Business, o cambiarlo.
-- [ ] **Correo de contacto.** El formulario abre el cliente de correo apuntando a
-      `info@crisosa.com` (`CONTACT_EMAIL` en `assets/js/main.js`). Confirmar.
+- [ ] **WhatsApp.** El botón flotante es una llamada a `+52 (664) 607-25-31`.
+      No hay enlace de WhatsApp en el sitio.
+- [ ] **Correo de contacto.** El formulario ya no abre un correo. El contacto
+      público es por los teléfonos de México y Estados Unidos.
 - [ ] **Domicilio completo.** El sitio dice sólo «Tijuana, Baja California». Falta el
       domicilio y, si se quiere, un mapa en `/contacto/`.
 - [ ] **Casos de éxito.** Los logos son presencia, no evidencia. Dos o tres casos con
@@ -243,8 +238,8 @@ tráfico a una dirección que no existe.
       página. Falta validarlo.
 - [ ] **Logo de cliente sin identificar.** `assets/logos/horse.png` aparece en la
       presentación sin nombre legible; lleva el alt genérico «Socio comercial».
-- [ ] **Formulario con backend.** El `mailto:` funciona sin servidor, pero pierde
-      contactos. Si se quiere recibirlos en una bandeja o CRM hay que conectar un
-      servicio de formularios.
+- [ ] **Formulario con backend.** El formulario valida los datos y abre la llamada
+      al teléfono de México. No envía el mensaje a ningún buzón. Si se quieren
+      recibir las solicitudes en una bandeja o CRM hay que conectar un servicio.
 - [ ] **Autorización de logos.** Confirmar que los clientes autorizan el uso de su
       marca en el sitio público.
