@@ -91,10 +91,8 @@ generado desde `tools/plates.py`, y separa dos tipos de espacio:
   fotográfica para que las piezas parezcan una sola sesión, y todos piden **espacio
   vacío en el tercio superior**, que es donde cae el titular.
 - **Para fotografiar de verdad.** El conjunto, el patio, el acceso, la unidad de
-  reparto, el equipo y los retratos de los líderes de área. Son los activos y la
-  gente de CRISOSA: ninguna imagen generada los sustituye. El texto es la guía de
-  toma —encuadre, luz, fondo— para que las cinco fotos de líderes se vean como un
-  equipo y no como cinco fotos sueltas.
+  reparto y el equipo. Son los activos de CRISOSA: ninguna imagen generada los
+  sustituye. El texto es la guía de toma —encuadre, luz, fondo—.
 
 Algunos espacios ya vienen llenos con material real. Se reemplazan usando el mismo
 nombre de archivo.
@@ -223,9 +221,6 @@ tráfico a una dirección que no existe.
 
 - [ ] **Las imágenes.** Ver `assets/img/PROMPTS.md`: separa las que se generan con
       un modelo de las que hay que fotografiar en sitio.
-- [ ] **Nombres de los líderes de área.** `/nosotros/` publica cinco puestos con
-      «Nombre por confirmar». Los puestos están en `tools/parts/nosotros.html` y los
-      retratos en `tools/plates.py` (`lead-1` a `lead-5`).
 - [ ] **Dominio real.** `SITE` al final de `tools/build.py` dice
       `https://www.crisosa.com`. De ahí salen la URL canónica, el `og:image` y el
       `sitemap.xml`: **con el dominio equivocado, las vistas previas al compartir el
